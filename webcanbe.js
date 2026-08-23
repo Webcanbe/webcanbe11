@@ -65,6 +65,7 @@
     , ["Blackwell Motors", "PERSONAL BRAND"]
     , ["Automotive digital transformation", "이름 · 소개 · 서비스"]
     , ["Aspen® 877", "CREATOR COMMERCE"]
+    , ["Aspen®", "CREATOR"]
     , ["E-Mobility brand launch", "강의 · 상품 · 뉴스레터"]
     , ["we listen", "WE LISTEN"]
     , ["we imagine", "WE IMAGINE"]
@@ -192,6 +193,7 @@
     replaceImage('img[alt^="Modern beachfront villa"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 공식 웹사이트 쇼케이스');
     replaceImage('img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 웹사이트 쇼케이스');
     replaceImage('img[alt^="Close-up of black road bike"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 커머스 웹사이트 쇼케이스');
+    replaceImage('img[alt^="Abstract dark background"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 웹사이트 비주얼');
   };
 
   const setContactForm = () => {
