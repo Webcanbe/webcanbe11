@@ -1,9 +1,1 @@
-/* Korean typography refinement without overriding the template's composition. */
-html[lang="ko"] body { font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif; }
-html[lang="ko"] .framer-text { word-break: keep-all; overflow-wrap: break-word; }
-html[lang="ko"] p.framer-text { line-height: 1.55em; }
-.webcanbe-remove { display: none !important; }
-select.framer-form-input { appearance: auto; min-height: 48px; color: inherit; background: transparent; border: 0; border-bottom: 1px solid currentColor; border-radius: 0; padding: 10px 0; }
-@media (max-width: 809px) {
-  html[lang="ko"] .framer-text { letter-spacing: -0.035em !important; }
-}
+/* Intentionally empty: WebCanBe reuses the unmodified Create visual system. */

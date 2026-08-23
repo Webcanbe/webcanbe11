@@ -48,6 +48,9 @@
     ["A creative agency for design, strategy, marketing, and scalable premium websites.", "콘텐츠, 상품, 활동을 하나의 공식 웹사이트로 완성합니다."],
     ["© 2026 Create Studio — All work, all rights.", "© WebCanBe. All rights reserved."],
     ["Follow us on socials", "CONTACT"],
+    ["hello@create.com", "creator@webcanbe.com"],
+    ["hello@createme.com", "creator@webcanbe.com"],
+    ["Create Studio", "WebCanBe"],
     ["Offline", "ABOUT"],
     ["Online", "EMAIL"],
     ["Phone", "INQUIRY"]
@@ -63,6 +66,52 @@
     });
   };
 
+  // Some Create headlines are split across animated character spans. Reuse those
+  // exact nodes, rather than replacing their markup, so the original reveal motion
+  // and layout rules remain intact.
+  const replaceAnimatedText = (from, to) => {
+    const normalize = (value) => value.replace(/\s+/g, "").trim();
+    const target = normalize(from);
+    const candidates = [...document.querySelectorAll('p, h1, h2, h3, h4, div')]
+      .filter((el) => normalize(el.textContent || '') === target)
+      .filter((el) => ![...el.children].some((child) => normalize(child.textContent || '') === target));
+    candidates.forEach((element) => {
+      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+      const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+      let position = 0;
+      nodes.forEach((node) => {
+        const length = node.nodeValue.length;
+        node.nodeValue = to.slice(position, position + length);
+        position += length;
+      });
+    });
+  };
+
+  const replaceAnimatedCopy = () => {
+    [
+      ['Digital experiences that connect, scale and perform', '콘텐츠를 넘어 하나의 브랜드로'],
+      ['The proof behind our work', '흩어진 링크 대신 하나의 공식 공간'],
+      ['Brands who are part of our success story', '사이트 하나에도 브랜드의 차이는 보입니다'],
+      ['Brand Identity', '크리에이터 공식 사이트'],
+      ['Strategy', '1인 브랜드 사이트'],
+      ['Design & Innovation', '런칭 랜딩페이지'],
+      ['AI Systems', '포트폴리오 사이트'],
+      ['SEO', '인터랙티브 사이트'],
+      ['Development', '맞춤형 웹 개발'],
+      ['The process behind our success', '복잡한 과정은 줄이고 필요한 것에 집중합니다'],
+      ['Clearing doubts and concerns', '자주 묻는 질문'],
+      ['What kind of projects does Create take on?', '어떤 크리에이터에게 적합한가요?'],
+      ['How do you approach new projects?', '기존 사이트 리뉴얼도 가능한가요?'],
+      ['What’s a realistic project timeline?', '모바일 사이트도 함께 제작되나요?'],
+      ['Who actually does the work?', '애니메이션과 인터랙션도 제작할 수 있나요?'],
+      ['How do we communicate during the process?', '도메인 연결과 배포도 해주나요?'],
+      ['What happens after launch?', '전자책이나 강의 판매 사이트도 제작할 수 있나요?'],
+      ['Let us inspire your next project', '당신의 이름으로 남는 공간을 만드세요'],
+      ['Keep you in the loop.', 'WebCanBe와 함께 시작하세요'],
+      ['Get the latest news, insights directly to your inbox.', '크리에이터와 1인 브랜드를 위한 웹사이트 스튜디오']
+    ].forEach(([from, to]) => replaceAnimatedText(from, to));
+  };
+
   const setMeta = () => {
     document.documentElement.lang = "ko";
     document.title = "WebCanBe — 크리에이터 웹사이트 스튜디오";
@@ -72,7 +121,8 @@
   };
 
   const setLinks = () => {
-    document.querySelectorAll('a[href*="contact"], a[href^="mailto:"]').forEach((a) => a.href = "contact.html");
+    document.querySelectorAll('a[href*="contact"]').forEach((a) => a.href = "contact.html");
+    document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href*="framerpod"], a[href*="framer.com"]').forEach((a) => {
       if (/template|more templates/i.test(a.textContent)) a.remove();
     });
@@ -99,9 +149,6 @@
       'Section | Book a Call': 'start'
     };
     Object.entries(sections).forEach(([name, id]) => document.querySelectorAll(`[data-framer-name="${name}"]`).forEach((section) => section.id = id));
-    ['Section | Featured Projects', 'Section | Statistics', 'Section | The Team', 'Section | Testimonial', 'Section | Blog Teaser'].forEach((name) => {
-      document.querySelectorAll(`[data-framer-name="${name}"]`).forEach((section) => section.classList.add('webcanbe-remove'));
-    });
     document.querySelectorAll('[aria-label="Go to Create home"]').forEach((button) => {
       button.setAttribute('aria-label', 'Go to WebCanBe home');
       button.closest('a')?.setAttribute('href', 'index.html');
@@ -140,7 +187,7 @@
     });
   };
 
-  const run = () => { setMeta(); replaceText(); setLinks(); removeUnsupportedClaims(); curateHome(); setContactForm(); };
+  const run = () => { setMeta(); replaceText(); replaceAnimatedCopy(); setLinks(); removeUnsupportedClaims(); curateHome(); setContactForm(); };
   // Framer hydrates its exported markup asynchronously; apply content after it settles.
   const start = () => window.setTimeout(run, 1800);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
