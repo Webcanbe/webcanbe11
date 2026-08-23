@@ -81,10 +81,10 @@
   const replaceAnimatedText = (from, to) => {
     const normalize = (value) => value.replace(/\s+/g, "").trim();
     const target = normalize(from);
-    const candidates = [...document.querySelectorAll('p, h1, h2, h3, h4, div')]
+    const candidates = [...document.querySelectorAll('*')]
       .filter((el) => normalize(el.textContent || '') === target)
-      .filter((el) => ![...el.children].some((child) => normalize(child.textContent || '') === target));
-    candidates.forEach((element) => {
+      .sort((a, b) => (a.textContent || '').length - (b.textContent || '').length);
+    candidates.slice(0, 1).forEach((element) => {
       const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
       const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
       let position = 0;
@@ -115,6 +115,12 @@
       ['Who actually does the work?', '애니메이션과 인터랙션도 제작할 수 있나요?'],
       ['How do we communicate during the process?', '도메인 연결과 배포도 해주나요?'],
       ['What happens after launch?', '전자책이나 강의 판매 사이트도 제작할 수 있나요?'],
+      ['We focus on brand identity, digital products, and websites that need both design clarity and technical polish.', '콘텐츠와 이름을 중심으로 활동하는 크리에이터와 개인 브랜드에 적합합니다.'],
+      ['We start by understanding your goals and constraints, then outline clear milestones so you know exactly what’s coming next.', '가능합니다. 현재 구조와 브랜드를 확인한 뒤 필요한 부분부터 다시 설계합니다.'],
+      ['Most branding or smaller websites are ready in 2–4 weeks. Larger sites and platforms run 6–12 weeks, depending on scope.', '모든 사이트는 데스크톱과 모바일 환경을 함께 고려해 제작합니다.'],
+      ['Every project is led by senior designers and developers. No handoffs to juniors figuring things out on the fly.', '프로젝트 방향에 따라 스크롤과 전환, hover 인터랙션을 적용할 수 있습니다.'],
+      ['We keep things simple: one main contact, weekly updates, and quick replies when you need us.', '최종 사이트 배포와 기본 도메인 연결까지 진행할 수 있습니다.'],
+      ['We can stay involved — fixing issues, rolling out updates, or handling ongoing support if that’s part of your plan.', '필요에 따라 외부 결제·판매 플랫폼 또는 맞춤 기능을 연결할 수 있습니다.'],
       ['Let us inspire your next project', '당신의 이름으로 남는 공간을 만드세요'],
       ['Keep you in the loop.', 'WebCanBe와 함께 시작하세요'],
       ['Get the latest news, insights directly to your inbox.', '크리에이터와 1인 브랜드를 위한 웹사이트 스튜디오']
