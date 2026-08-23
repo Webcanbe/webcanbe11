@@ -153,6 +153,11 @@
       button.setAttribute('aria-label', 'Go to WebCanBe home');
       button.closest('a')?.setAttribute('href', 'index.html');
     });
+    document.querySelectorAll('[data-framer-name="Hero Image"] img').forEach((image) => {
+      image.src = 'assets/webcanbe-creator-portrait.png';
+      image.removeAttribute('srcset');
+      image.alt = 'WebCanBe가 만드는 개인 브랜드의 에디토리얼 포트레이트';
+    });
   };
 
   const setContactForm = () => {
