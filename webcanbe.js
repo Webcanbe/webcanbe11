@@ -69,6 +69,11 @@
     , ["we listen", "WE LISTEN"]
     , ["we imagine", "WE IMAGINE"]
     , ["we create", "WE CREATE"]
+    , ["More Projects", "서비스 쇼케이스"]
+    , ["Get Template", "WebCanBe"]
+    , ["See whats inside", "프로젝트 문의"]
+    , ["JOIN OUR NEWSLETTER", "제작 상담하기"]
+    , ["Enter Your Email", "이메일을 입력하세요"]
   ]);
 
   const replaceText = () => {
@@ -145,6 +150,7 @@
     document.querySelectorAll('a[href*="contact"]').forEach((a) => a.href = "contact.html");
     document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href^="tel:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
+    document.querySelectorAll('a[href*="dub.sh/create"], a[href*="framerpod"], a[href*="tamasbodo"], a[href*="linkedin.com"], a[href*="whatsapp.com"], a[href*="glassdoor.com"]').forEach((a) => a.href = "contact.html");
     document.querySelectorAll('a[href*="framerpod"], a[href*="framer.com"]').forEach((a) => {
       if (/template|more templates/i.test(a.textContent)) a.remove();
     });
@@ -185,6 +191,7 @@
     });
     replaceImage('img[alt^="Modern beachfront villa"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 공식 웹사이트 쇼케이스');
     replaceImage('img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 웹사이트 쇼케이스');
+    replaceImage('img[alt^="Close-up of black road bike"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 커머스 웹사이트 쇼케이스');
   };
 
   const setContactForm = () => {
