@@ -75,16 +75,75 @@
     , ["See whats inside", "프로젝트 문의"]
     , ["JOIN OUR NEWSLETTER", "제작 상담하기"]
     , ["Enter Your Email", "이메일을 입력하세요"]
+    , ["we listen.", "듣고"]
+    , ["we imagine.", "설계하고"]
+    , ["we create.", "만듭니다"]
+    , ["Ideas", "당신에게서 시작하는"]
+    , ["that start with you", "하나뿐인 웹사이트"]
+    , ["Client Satisfaction Rate", "제작 원칙"]
+    , ["99.9%", "맞춤형"]
+    , ["12+", "콘텐츠"]
+    , ["INDUSTRIES SERVED", "활동을 한곳에"]
+    , ["24H", "소통"]
+    , ["AVERAGE RESPONSE TIME", "과정과 일정을 투명하게"]
+    , ["96%", "모바일"]
+    , ["FIRST DRAFT APPROVED", "모든 화면에 맞게"]
+    , ["99%", "런칭"]
+    , ["SHIP ON-TIME", "검수부터 배포까지"]
+    , ["5 / 5 (98 reviews)", "하나의 제작 흐름"]
+    , ["Backed by feedback from 120+ brands we’ve worked with.", "디자인부터 개발, 인터랙션과 배포까지 한 흐름으로 진행합니다."]
+    , ["No reheated or pre-made.", "정해진 답을 끼워 맞추지 않습니다."]
+    , ["Every project starts fresh.", "프로젝트마다 처음부터 설계합니다."]
+    , ["Custom work", "맞춤 제작"]
+    , ["from day one.", "첫 단계부터."]
+    , ["Simple Pricing", "명확한 제작 방식"]
+    , ["Plans that scale with your project and give you room for unlimited creative opportunities.", "필요한 페이지와 기능을 먼저 정리하고, 프로젝트 범위에 맞춰 제안합니다."]
+    , ["CORE", "기본"]
+    , ["FOR STARTUPS AND FIRST LAUNCHES", "공식 사이트의 핵심부터"]
+    , ["STUDIO", "맞춤"]
+    , ["FOR GROWING TEAMS AND SERIOUS BUILDS", "브랜드에 맞춘 완전한 구성"]
+    , ["SCALE", "인터랙티브"]
+    , ["FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH", "모션과 기능까지 맞춤 제작"]
+    , ["Pick a plan that grows with you and keeps creative costs predictable.", "가격을 임의로 정하지 않고 필요한 범위를 확인한 뒤 안내합니다."]
+    , ["Explore plans", "프로젝트 상담하기"]
+    , ["Built for the long run", "오픈 이후까지"]
+    , ["With You Beyond Launch", "사이트는 오픈 뒤에도 이어집니다"]
+    , ["Ongoing support", "운영 지원"]
+    , ["Long-term partnership", "필요한 수정"]
+    , ["Future-ready builds", "확장 가능한 구조"]
+    , ["Quick intro call, no strings attached.", "간단한 이야기부터 시작합니다."]
+    , ["Let's chat or just say hello.", "프로젝트 이야기를 들려주세요."]
+    , ["Next Availability", "CONTACT"]
+    , ["from 14 September 2025", "creator@webcanbe.com"]
+    , ["Book now", "제작 상담하기"]
   ]);
 
-  const replaceText = () => {
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const benefitCardCopy = new Map([
+    ["Industries served", "활동을 한곳에"],
+    ["24h", "소통"],
+    ["Average Response Time", "과정과 일정을 투명하게"],
+    ["First Draft Approved", "모든 화면에 맞게"],
+    ["Ship on-Time", "검수부터 배포까지"],
+    ["Core", "기본"],
+    ["For startups and first launches", "공식 사이트의 핵심부터"],
+    ["Studio", "맞춤"],
+    ["For growing teams and serious builds", "브랜드에 맞춘 완전한 구성"],
+    ["Scale", "인터랙티브"],
+    ["For established teams and long-term growth", "모션과 기능까지 맞춤 제작"]
+  ]);
+
+  const replaceTextWithin = (root, replacements) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach((node) => {
       const normalized = node.nodeValue.replace(/\s+/g, " ").trim();
-      if (copy.has(normalized)) node.nodeValue = node.nodeValue.replace(normalized, copy.get(normalized));
+      if (replacements.has(normalized)) node.nodeValue = node.nodeValue.replace(normalized, replacements.get(normalized));
     });
+  };
+
+  const replaceText = () => {
+    replaceTextWithin(document.body, copy);
   };
 
   // Some Create headlines are split across animated character spans. Reuse those
@@ -96,12 +155,13 @@
     const candidates = [...document.querySelectorAll('*')]
       .filter((el) => normalize(el.textContent || '') === target)
       .sort((a, b) => (a.textContent || '').length - (b.textContent || '').length);
-    candidates.slice(0, 1).forEach((element) => {
+    const targets = candidates.filter((element) => !candidates.some((other) => other !== element && element.contains(other)));
+    targets.forEach((element) => {
       const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
       const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
       let position = 0;
-      nodes.forEach((node) => {
-        const length = node.nodeValue.length;
+      nodes.forEach((node, index) => {
+        const length = index === nodes.length - 1 ? Math.max(node.nodeValue.length, to.length - position) : node.nodeValue.length;
         node.nodeValue = to.slice(position, position + length);
         position += length;
       });
@@ -135,7 +195,48 @@
       ['We can stay involved — fixing issues, rolling out updates, or handling ongoing support if that’s part of your plan.', '필요에 따라 외부 결제·판매 플랫폼 또는 맞춤 기능을 연결할 수 있습니다.'],
       ['Let us inspire your next project', '당신의 이름으로 남는 공간을 만드세요'],
       ['Keep you in the loop.', 'WebCanBe와 함께 시작하세요'],
-      ['Get the latest news, insights directly to your inbox.', '크리에이터와 1인 브랜드를 위한 웹사이트 스튜디오']
+      ['Get the latest news, insights directly to your inbox.', '크리에이터와 1인 브랜드를 위한 웹사이트 스튜디오'],
+      ['we listen.', '듣고'],
+      ['we imagine.', '설계하고'],
+      ['we create.', '만듭니다'],
+      ['Ideas', '당신에게서 시작하는'],
+      ['that start with you', '하나뿐인 웹사이트'],
+      ['Client Satisfaction Rate', '제작 원칙'],
+      ['99.9%', '맞춤형'],
+      ['12+', '콘텐츠'],
+      ['INDUSTRIES SERVED', '활동을 한곳에'],
+      ['24H', '소통'],
+      ['AVERAGE RESPONSE TIME', '과정과 일정을 투명하게'],
+      ['96%', '모바일'],
+      ['FIRST DRAFT APPROVED', '모든 화면에 맞게'],
+      ['99%', '런칭'],
+      ['SHIP ON-TIME', '검수부터 배포까지'],
+      ['5 / 5 (98 reviews)', '하나의 제작 흐름'],
+      ['Backed by feedback from 120+ brands we’ve worked with.', '디자인부터 개발, 인터랙션과 배포까지 한 흐름으로 진행합니다.'],
+      ['No reheated or pre-made.', '정해진 답을 끼워 맞추지 않습니다.'],
+      ['Every project starts fresh.', '프로젝트마다 처음부터 설계합니다.'],
+      ['Custom work', '맞춤 제작'],
+      ['from day one.', '첫 단계부터.'],
+      ['Simple Pricing', '명확한 제작 방식'],
+      ['Plans that scale with your project and give you room for unlimited creative opportunities.', '필요한 페이지와 기능을 먼저 정리하고, 프로젝트 범위에 맞춰 제안합니다.'],
+      ['CORE', '기본'],
+      ['FOR STARTUPS AND FIRST LAUNCHES', '공식 사이트의 핵심부터'],
+      ['STUDIO', '맞춤'],
+      ['FOR GROWING TEAMS AND SERIOUS BUILDS', '브랜드에 맞춘 완전한 구성'],
+      ['SCALE', '인터랙티브'],
+      ['FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH', '모션과 기능까지 맞춤 제작'],
+      ['Pick a plan that grows with you and keeps creative costs predictable.', '가격을 임의로 정하지 않고 필요한 범위를 확인한 뒤 안내합니다.'],
+      ['Explore plans', '프로젝트 상담하기'],
+      ['Built for the long run', '오픈 이후까지'],
+      ['With You Beyond Launch', '사이트는 오픈 뒤에도 이어집니다'],
+      ['Ongoing support', '운영 지원'],
+      ['Long-term partnership', '필요한 수정'],
+      ['Future-ready builds', '확장 가능한 구조'],
+      ['Quick intro call, no strings attached.', '간단한 이야기부터 시작합니다.'],
+      ["Let's chat or just say hello.", '프로젝트 이야기를 들려주세요.'],
+      ['Next Availability', 'CONTACT'],
+      ['from 14 September 2025', 'creator@webcanbe.com'],
+      ['Book now', '제작 상담하기']
     ].forEach(([from, to]) => replaceAnimatedText(from, to));
   };
 
@@ -170,6 +271,31 @@
     });
   };
 
+  // The pricing carousel mounts and recycles slides after the initial Framer
+  // hydration. Re-apply the content layer only to this grid when those nodes
+  // change so every desktop/mobile clone receives the same copy and assets.
+  let benefitCardRefresh;
+  const refreshBenefitCards = () => {
+    window.clearTimeout(benefitCardRefresh);
+    benefitCardRefresh = window.setTimeout(() => {
+      replaceText();
+      document.querySelectorAll('[data-framer-name="Benefit Cards"]').forEach((grid) => replaceTextWithin(grid, benefitCardCopy));
+      replaceAnimatedCopy();
+      curateHome();
+      setLinks();
+    }, 80);
+  };
+
+  const observeBenefitCards = () => {
+    document.querySelectorAll('[data-framer-name="Benefit Cards"]').forEach((grid) => {
+      if (grid.dataset.webcanbeObserved === 'true') return;
+      grid.dataset.webcanbeObserved = 'true';
+      new MutationObserver(refreshBenefitCards).observe(grid, { childList: true, subtree: true, characterData: true });
+    });
+    window.setTimeout(refreshBenefitCards, 1200);
+    window.setTimeout(refreshBenefitCards, 2800);
+  };
+
   const curateHome = () => {
     const sections = {
       'Section | Introduction': 'about',
@@ -194,6 +320,22 @@
     replaceImage('img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 웹사이트 쇼케이스');
     replaceImage('img[alt^="Close-up of black road bike"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 커머스 웹사이트 쇼케이스');
     replaceImage('img[alt^="Abstract dark background"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 웹사이트 비주얼');
+    replaceImage('img[src*="aJxLydBlZv1oYCCj63OZdiRqLuQ"]', 'assets/webcanbe-wordmark.svg', 'WebCanBe');
+    replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and red covers"]', 'assets/webcanbe-design-process.png', 'WebCanBe의 맞춤 웹사이트 설계 과정');
+    replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-creator-workspace.png', '개인 브랜드 웹사이트를 설계하는 크리에이터 스튜디오');
+    replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 웹사이트 쇼케이스');
+    replaceImage('[data-framer-name^="Benefit Card 06"] img[alt^="3D character wearing an orange jumpsuit"]', 'assets/webcanbe-contact-creator.png', '개인 브랜드를 운영하는 크리에이터의 에디토리얼 포트레이트');
+    document.querySelectorAll('[data-framer-name="Benefit Cards"] [data-framer-name="Stars"]').forEach((stars) => stars.style.display = 'none');
+    document.querySelectorAll('[data-framer-name^="Benefit Card 06"] video').forEach((video) => {
+      if (video.poster.endsWith('assets/webcanbe-creator-workspace.png')) return;
+      video.pause();
+      video.poster = 'assets/webcanbe-creator-workspace.png';
+      video.removeAttribute('src');
+      video.querySelectorAll('source').forEach((source) => source.remove());
+      video.setAttribute('aria-label', '개인 브랜드 웹사이트를 설계하는 크리에이터');
+      video.load();
+    });
+    document.querySelectorAll('[data-framer-name^="Benefit Card 06"] a').forEach((link) => link.href = 'contact.html');
   };
 
   const setContactForm = () => {
@@ -228,7 +370,7 @@
     });
   };
 
-  const run = () => { setMeta(); replaceText(); replaceAnimatedCopy(); setLinks(); removeUnsupportedClaims(); curateHome(); setContactForm(); };
+  const run = () => { setMeta(); replaceText(); replaceAnimatedCopy(); setLinks(); removeUnsupportedClaims(); curateHome(); observeBenefitCards(); setContactForm(); };
   // Framer hydrates its exported markup asynchronously; apply content after it settles.
   const start = () => window.setTimeout(run, 1800);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
