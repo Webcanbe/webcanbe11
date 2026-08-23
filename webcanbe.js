@@ -2,19 +2,19 @@
 (() => {
   const copy = new Map([
     ["Create® —  Design Studio", "WebCanBe — Creator Website Studio"],
-    ["Digital experiences that connect, scale and perform", "콘텐츠를 넘어, 하나의 브랜드로."],
-    ["Quietly making noise for brands worldwide", "크리에이터와 1인 브랜드를 위한 공식 웹사이트 스튜디오"],
-    ["A DESIGN STUDIO TRUSTED BY STARTUPS AND LEADING BRANDS.", "ABOUT WEBCANBE"],
-    ["WE CREATE STORIES PEOPLE REMEMBER.", "플랫폼이 달라도 브랜드는 하나여야 하니까."],
+    ["Digital experiences that connect, scale and perform", "당신의 이름을 하나의 브랜드로"],
+    ["Quietly making noise for brands worldwide", "크리에이터와 개인 브랜드를 위한 고급 공식 웹사이트 제작 스튜디오"],
+    ["A DESIGN STUDIO TRUSTED BY STARTUPS AND LEADING BRANDS.", "CREATOR WEBSITE STUDIO"],
+    ["WE CREATE STORIES PEOPLE REMEMBER.", "채널은 이미 있습니다. 이제 브랜드가 필요합니다."],
     ["SEE WORK", "서비스 보기"],
     ["LET'S CHAT", "제작 상담하기"],
-    ["Showreel 2025", "CREATOR WEBSITE"],
-    ["Best Digital Campaign,Wobbly Awards", "YouTube · Instagram · 상품 · 강의 · 협업 문의"],
-    ["PERFORMANCE", "CREATOR WEBSITE"],
-    ["The proof behind our work", "흩어진 링크 대신 하나의 공식 공간."],
-    ["——  From first launches to lasting collaborations, we’re trusted to deliver on time and at quality.", "유튜브, SNS, 상품, 강의, 포트폴리오, 협업 문의까지 한곳에서 보여주세요."],
-    ["Brands who are part of our success story", "사이트 하나에도 브랜드의 차이는 보입니다."],
-    ["What we do best, and what your next project needs most.", "콘텐츠가 먼저 보이고, 브랜드가 오래 기억되는 웹을 설계합니다."],
+    ["Showreel 2025", "WEBSITE FILM"],
+    ["Best Digital Campaign,Wobbly Awards", "CREATOR · PERSONAL BRAND · COMMERCE"],
+    ["PERFORMANCE", "DEMO PROJECT · JUNE PARK"],
+    ["The proof behind our work", "조회수는 지나가도, 브랜드는 남습니다."],
+    ["——  From first launches to lasting collaborations, we’re trusted to deliver on time and at quality.", "콘텐츠, 뉴스레터, 협업 문의를 한 사이트로 연결한 JUNE PARK 콘셉트 프로젝트입니다."],
+    ["Brands who are part of our success story", "사람들은 콘텐츠를 보고 들어오지만, 브랜드를 보고 기억합니다."],
+    ["What we do best, and what your next project needs most.", "이름이 커질수록, 공식 공간도 필요합니다."],
     ["services", "SERVICES"],
     ["FOUNDATION", "OFFICIAL SITE"],
     ["Brand Identity", "크리에이터 공식 사이트"],
@@ -29,9 +29,9 @@
     ["BUILD", "WEB DESIGN"],
     ["Development", "맞춤형 웹 개발"],
     ["HOW WE WORK", "PROCESS"],
-    ["The process behind our success", "복잡한 과정은 줄이고 필요한 것에 집중합니다."],
-    ["Services built on process, precision, and people.", "상담부터 배포까지"],
-    ["We combine strategy, design, content, and technology, giving you a single partner for every stage of your brand’s growth.", "01 상담 · 02 구조 · 03 디자인 · 04 개발 · 05 배포"],
+    ["The process behind our success", "좋은 사이트는 우연히 나오지 않습니다."],
+    ["Services built on process, precision, and people.", "아이디어에서 공개까지"],
+    ["We combine strategy, design, content, and technology, giving you a single partner for every stage of your brand’s growth.", "01 방향 · 02 구조 · 03 디자인 · 04 개발 · 05 공개"],
     ["Chat with our Operations Manager", "프로젝트 상담하기"],
     ["DISCOVERY", "상담"],
     ["STRATEGY", "방향 및 구조 설계"],
@@ -61,7 +61,7 @@
     ["Online", "EMAIL"],
     ["Phone", "INQUIRY"]
     , ["Social media link", "WebCanBe 링크"]
-    , ["What our clients say", "WEBCANBE STANDARD"]
+    , ["What our clients say", "DEMO PROJECT REVIEW"]
     , ["UX Lead", "콘텐츠 구조"]
     , ["SAVE 20%", "범위에 맞게"]
     , ["Timeline", "제작 기간"]
@@ -73,7 +73,9 @@
     , ["Dec 7, 2025", "WEBSITE GUIDE"]
     , ["Do you still have questions?", "더 궁금한 점이 있으신가요?"]
     , ["3.4x", "개발"]
-    , ["Backed by feedback from 맞춤형 brands we’ve worked with.", "디자인부터 배포까지 한 흐름으로 진행합니다."]
+    , ["Backed by feedback from 맞춤형 brands we’ve worked with.", "수정과 확장까지 이어갈 수 있습니다."]
+    , ["Backed by feedback from 방향부터 공개까지 brands we’ve worked with.", "JUNE PARK 데모 프로젝트의 가상 사용자 후기입니다."]
+    , ["Backed by feedback from 방향부터 공개까지 brands we've worked with.", "JUNE PARK 데모 프로젝트의 가상 사용자 후기입니다."]
     , ["Lindholm launched Aspen® 877, a new e-bike. The challenge was positioning it as both a lifestyle product and a piece of cutting-edge mobility tech.", "콘텐츠에서 상품과 강의, 뉴스레터까지 자연스럽게 이어지는 구조를 설계합니다."]
     , ["120+ projects delivered", "맞춤형 웹사이트 제작"]
     , ["$2,800", "상담 후"]
@@ -86,50 +88,63 @@
     , ["GET STARTED", "상담하기"]
     , ["2017-2025", "DESIGN—BUILD"]
     , ["2016 — 2025", "IDEA—LAUNCH"]
-    , ["Aurelis Beach Resort", "CREATOR WEBSITE"]
-    , ["Hospitality branding and website", "콘텐츠 · 프로필 · 협업"]
-    , ["Blackwell Motors", "PERSONAL BRAND"]
-    , ["Automotive digital transformation", "이름 · 소개 · 서비스"]
-    , ["Aspen® 877", "CREATOR COMMERCE"]
-    , ["Aspen®", "CREATOR"]
-    , ["E-Mobility brand launch", "강의 · 상품 · 뉴스레터"]
-    , ["we listen", "듣습니다"]
-    , ["we imagine", "설계합니다"]
-    , ["we create", "만듭니다"]
+    , ["Aurelis Beach Resort", "JUNE PARK"]
+    , ["Hospitality branding and website", "CREATOR · TECHNOLOGY"]
+    , ["Blackwell Motors", "MINA SEO"]
+    , ["Automotive digital transformation", "CREATOR COMMERCE"]
+    , ["Aspen® 877", "DANIEL KIM"]
+    , ["Aspen®", "DEMO PROJECT"]
+    , ["E-Mobility brand launch", "PERSONAL BRAND · CONSULTING"]
+    , ["NEXT.JS", "PERSONAL BRAND"]
+    , ["TYPESCRIPT", "CONTENT ARCHIVE"]
+    , ["TAILWIND CSS", "NEWSLETTER"]
+    , ["FRAMER MOTION", "PARTNERSHIP INQUIRY"]
+    , ["CLOUDFLARE CDN", "DEMO PROJECT"]
+    , ["REACT", "CREATOR COMMERCE"]
+    , ["WEBGL", "COURSE · SHOP"]
+    , ["NODE.JS", "LAUNCH PAGE"]
+    , ["AWS LAMBDA", "EMAIL CAPTURE"]
+    , ["OPENAI EMBEDDINGS", "DEMO PROJECT"]
+    , ["FRAMER", "PORTFOLIO"]
+    , ["GSAP", "SERVICES"]
+    , ["META ADS INTEGRATION", "DEMO PROJECT"]
+    , ["we listen", "채널은 있습니다"]
+    , ["we imagine", "브랜드가 필요합니다"]
+    , ["we create", "이름이 기억되도록"]
     , ["More Projects", "서비스 쇼케이스"]
     , ["Get Template", "WebCanBe"]
     , ["See whats inside", "프로젝트 문의"]
     , ["JOIN OUR NEWSLETTER", "제작 상담하기"]
     , ["Enter Your Email", "이메일을 입력하세요"]
-    , ["we listen.", "듣고"]
-    , ["we imagine.", "설계하고"]
-    , ["we create.", "만듭니다"]
-    , ["Ideas", "당신에게서 시작하는"]
-    , ["that start with you", "하나뿐인 웹사이트"]
-    , ["Client Satisfaction Rate", "제작 원칙"]
-    , ["99.9%", "맞춤형"]
-    , ["12+", "콘텐츠"]
-    , ["INDUSTRIES SERVED", "활동을 한곳에"]
-    , ["24H", "소통"]
-    , ["AVERAGE RESPONSE TIME", "빠르게 확인"]
-    , ["96%", "모바일"]
-    , ["FIRST DRAFT APPROVED", "화면에 맞게"]
+    , ["we listen.", "먼저 듣고"]
+    , ["we imagine.", "정확히 정하고"]
+    , ["we create.", "끝까지 만듭니다"]
+    , ["Ideas", "당신의 이름을"]
+    , ["that start with you", "남는 브랜드로"]
+    , ["Client Satisfaction Rate", "맞춤 구조"]
+    , ["99.9%", "필요한 만큼"]
+    , ["12+", "콘텐츠·상품·문의"]
+    , ["INDUSTRIES SERVED", "한 흐름에"]
+    , ["24H", "빠른 피드백"]
+    , ["AVERAGE RESPONSE TIME", "결정은 선명하게"]
+    , ["96%", "반응형"]
+    , ["FIRST DRAFT APPROVED", "모든 화면에"]
     , ["99%", "런칭"]
-    , ["SHIP ON-TIME", "배포까지"]
-    , ["5 / 5 (98 reviews)", "하나의 제작 흐름"]
-    , ["Backed by feedback from 120+ brands we’ve worked with.", "디자인부터 배포까지 한 흐름으로 진행합니다."]
+    , ["SHIP ON-TIME", "실제 공개까지"]
+    , ["5 / 5 (98 reviews)", "오픈 이후"]
+    , ["Backed by feedback from 120+ brands we’ve worked with.", "수정과 확장까지 이어갈 수 있습니다."]
     , ["No reheated or pre-made.", "정해진 틀을 쓰지 않습니다."]
     , ["Every project starts fresh.", "처음부터 프로젝트에 맞게."]
     , ["Custom work", "맞춤 제작"]
     , ["from day one.", "첫 단계부터."]
-    , ["Simple Pricing", "명확한 제작 방식"]
-    , ["Plans that scale with your project and give you room for unlimited creative opportunities.", "필요한 것부터 정리하고 범위에 맞춰 제작합니다."]
-    , ["CORE", "기본"]
-    , ["FOR STARTUPS AND FIRST LAUNCHES", "공식 사이트의 핵심부터"]
-    , ["STUDIO", "맞춤"]
-    , ["FOR GROWING TEAMS AND SERIOUS BUILDS", "브랜드에 맞춘 완전한 구성"]
-    , ["SCALE", "인터랙티브"]
-    , ["FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH", "모션과 기능까지 맞춤 제작"]
+    , ["Simple Pricing", "시작은 분명하게"]
+    , ["Plans that scale with your project and give you room for unlimited creative opportunities.", "필요한 범위와 다음 단계를 한눈에 비교하세요."]
+    , ["CORE", "START"]
+    , ["FOR STARTUPS AND FIRST LAUNCHES", "빠르게 시작하는 공식 사이트"]
+    , ["STUDIO", "소개"]
+    , ["FOR GROWING TEAMS AND SERIOUS BUILDS", "브랜드 전체를 설계하는 맞춤 제작"]
+    , ["SCALE", "EXPAND"]
+    , ["FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH", "콘텐츠와 판매를 확장하는 사이트"]
     , ["Pick a plan that grows with you and keeps creative costs predictable.", "필요한 범위를 확인한 뒤 비용을 안내합니다."]
     , ["Explore plans", "프로젝트 상담하기"]
     , ["Built for the long run", "오픈 이후까지"]
@@ -142,27 +157,27 @@
     , ["Next Availability", "CONTACT"]
     , ["from 14 September 2025", "creator@webcanbe.com"]
     , ["Book now", "제작 상담하기"]
-    , ["WE LISTEN", "듣습니다"]
-    , ["WE IMAGINE", "설계합니다"]
-    , ["WE CREATE", "만듭니다"]
-    , ["beautiful things", "웹으로 완성"]
-    , ["—— From first launches to lasting collaborations, we’re trusted to deliver on time and at quality.", "콘텐츠와 활동을 하나의 공식 사이트로 정리합니다."]
-    , ["PROJECTS SHIPPED", "맞춤 설계"]
-    , ["REPEAT COLLABORATIONS", "반응형 개발"]
-    , ["INDUSTRY AWARDS", "인터랙션"]
-    , ["CLIENT RETENTION RATE", "런칭 지원"]
-    , ["—— We work with clarity, precision. Every step designed to move your project forward with confidence.", "필요한 과정을 분명하게 정리하고, 단계마다 함께 확인합니다."]
-    , ["We start by listening. Goals, challenges, and vision are mapped out clearly, setting the foundation for everything that follows.", "목표와 필요한 내용을 듣고 프로젝트의 방향을 정리합니다."]
-    , ["With insights in place, we define the roadmap. Positioning, priorities, and the best way to align design and execution.", "필요한 페이지와 콘텐츠를 정리하고 사이트의 흐름을 설계합니다."]
-    , ["Ideas take shape. From visuals to digital experiences, we design and develop with sharp attention to detail.", "브랜드와 콘텐츠에 맞는 화면과 경험을 디자인합니다."]
-    , ["Delivery is just the beginning. We measure, refine, and scale to ensure your project continues to perform.", "디자인을 실제 웹으로 구현하고 움직임과 디테일까지 완성합니다."]
-    , ["Step inside one of our featured projects. From first brief to launch, follow the process that shows what makes Create® different.", "상담부터 배포까지, 하나의 흐름으로 진행합니다."]
-    , ["Our process in motion", "하나의 흐름으로 완성합니다."]
-    , ["Explore a real case where strategy, design, and delivery lined up exactly as we work today.", "방향을 정하고 디자인한 뒤, 개발과 검수를 거쳐 공개합니다."]
+    , ["WE LISTEN", "채널은 있습니다"]
+    , ["WE IMAGINE", "브랜드가 필요합니다"]
+    , ["WE CREATE", "이름이 기억되도록"]
+    , ["beautiful things", "웹에 남깁니다"]
+    , ["—— From first launches to lasting collaborations, we’re trusted to deliver on time and at quality.", "콘텐츠, 뉴스레터, 협업 문의를 한 사이트로 연결한 JUNE PARK 콘셉트 프로젝트입니다."]
+    , ["PROJECTS SHIPPED", "월 콘텐츠 조회"]
+    , ["REPEAT COLLABORATIONS", "뉴스레터 구독자"]
+    , ["INDUSTRY AWARDS", "협업 문의 전환"]
+    , ["CLIENT RETENTION RATE", "디지털 상품 런칭"]
+    , ["—— We work with clarity, precision. Every step designed to move your project forward with confidence.", "목표가 선명해질 때까지 묻고, 공개해도 될 때까지 다듬습니다."]
+    , ["We start by listening. Goals, challenges, and vision are mapped out clearly, setting the foundation for everything that follows.", "무엇을 만드는지보다 왜 필요한지부터 확인합니다."]
+    , ["With insights in place, we define the roadmap. Positioning, priorities, and the best way to align design and execution.", "방문자가 이해할 순서와 핵심 페이지를 정합니다."]
+    , ["Ideas take shape. From visuals to digital experiences, we design and develop with sharp attention to detail.", "이름과 활동이 한눈에 보이는 화면을 만듭니다."]
+    , ["Delivery is just the beginning. We measure, refine, and scale to ensure your project continues to perform.", "반응형과 인터랙션을 구현하고 실제로 공개합니다."]
+    , ["Step inside one of our featured projects. From first brief to launch, follow the process that shows what makes Create® different.", "JUNE PARK 데모 프로젝트를 따라 기획에서 공개까지의 판단을 보여드립니다."]
+    , ["Our process in motion", "생각이 화면이 되는 과정"]
+    , ["Explore a real case where strategy, design, and delivery lined up exactly as we work today.", "스토리를 정리하고, 인터페이스를 만들고, 모든 화면을 검수합니다."]
     , ["Explore Case Studies", "프로젝트 상담하기"]
     , ["WHY CHOOSE US", "WHY WEBCANBE"]
-    , ["Designed to Make Your Life Easier", "좋은 웹사이트는 과정도 명확해야 합니다."]
-    , ["—— Clear process, quick reviews, and a clean launch at the end. We keep the steps simple so projects never get stuck.", "방향을 정하고 빠르게 확인해, 완성된 사이트를 실제로 공개합니다."]
+    , ["Designed to Make Your Life Easier", "링크를 모으는 건 쉽습니다. 브랜드를 만드는 건 다릅니다."]
+    , ["—— Clear process, quick reviews, and a clean launch at the end. We keep the steps simple so projects never get stuck.", "보이는 방식, 쓰이는 흐름, 공개 이후까지. 차이는 디테일에서 생깁니다."]
     , ["The foundation of every project — how your brand looks, feels, and communicates.", "브랜드의 인상과 메시지를 하나의 공식 사이트로 정리합니다."]
     , ["Positioning and messaging frameworks", "포지셔닝과 핵심 메시지"]
     , ["Visual identity systems", "비주얼 아이덴티티"]
@@ -199,10 +214,12 @@
     , ["E-commerce builds and optimisation", "판매 기능 연결"]
     , ["Custom feature development", "맞춤 기능 개발"]
     , ["Ongoing technical support", "오픈 이후 기술 지원"]
-    , ["Plans built to fit your next project", "프로젝트에 맞춘 제작 범위"]
-    , ["—— Designed around your specs, each plan gives you clarity on scope, features, and cost so you can move forward with confidence.", "필요한 페이지와 기능을 확인한 뒤 범위와 비용을 분명하게 안내합니다."]
-    , ["For startups and first launches", "첫 공식 사이트를 위한 구성"]
-    , ["Simple, fast, and effective, so you can focus on growing your business.", "핵심 페이지에 집중해 빠르고 명확하게 시작합니다."]
+    , ["Plans built to fit your next project", "시작은 분명하게"]
+    , ["—— Designed around your specs, each plan gives you clarity on scope, features, and cost so you can move forward with confidence.", "필요한 페이지와 기능을 확인한 뒤, 맞는 제작 범위와 비용을 안내합니다."]
+    , ["Core", "START"]
+    , ["STARTER PLAN", "OFFICIAL WEBSITE"]
+    , ["For startups and first launches", "빠르게 시작하는 공식 사이트"]
+    , ["Simple, fast, and effective, so you can focus on growing your business.", "핵심 페이지와 모바일, 기본 인터랙션까지 한 번에 준비합니다."]
     , ["Brand & Identity starter kit", "브랜드 기본 방향"]
     , ["Website design (core pages)", "핵심 페이지 디자인"]
     , ["Standard revisions", "필요한 수정"]
@@ -215,8 +232,10 @@
     , ["Feedback built into the process", "피드백을 반영하는 흐름"]
     , ["GET STARTED", "제작 상담하기"]
     , ["2-3 weeks", "프로젝트별 안내"]
-    , ["For growing teams and serious builds", "브랜드를 확장하는 맞춤 구성"]
-    , ["A complete package with flexibility, advanced design, and the support you need to grow faster.", "브랜드와 콘텐츠에 맞춰 페이지와 기능을 유연하게 구성합니다."]
+    , ["Studio", "소개"]
+    , ["ADVANCED PLAN", "PERSONAL BRAND WEBSITE"]
+    , ["For growing teams and serious builds", "브랜드 전체를 설계하는 맞춤 제작"]
+    , ["A complete package with flexibility, advanced design, and the support you need to grow faster.", "이름, 활동, 서비스를 하나의 인상으로 설계합니다."]
     , ["Extended Branding", "확장된 브랜드 구성"]
     , ["Full website design", "전체 웹사이트 디자인"]
     , ["UX flows & product design", "UX 흐름과 기능 설계"]
@@ -228,8 +247,10 @@
     , ["Unlimited adjustments before launch", "오픈 전 충분한 조정"]
     , ["Faster responses when you need us most", "필요한 순간 빠른 확인"]
     , ["4-6 weeks", "프로젝트별 안내"]
-    , ["For established teams and long-term growth", "장기 운영과 확장을 위한 구성"]
-    , ["Strategy, design, and dedicated support for complex projects that demand scalability and polish.", "전략부터 디자인과 개발, 운영 지원까지 하나의 흐름으로 진행합니다."]
+    , ["Scale", "EXPAND"]
+    , ["GROWTH PLAN", "CREATOR COMMERCE"]
+    , ["For established teams and long-term growth", "콘텐츠와 판매를 확장하는 사이트"]
+    , ["Strategy, design, and dedicated support for complex projects that demand scalability and polish.", "콘텐츠, 판매, 운영까지 확장 가능한 구조로 완성합니다."]
     , ["End-to-end brand strategy", "브랜드 전략 전체 설계"]
     , ["Large-scale website & CMS", "확장형 웹사이트와 CMS"]
     , ["Advanced UX & product design", "고도화된 UX와 기능 설계"]
@@ -275,62 +296,62 @@
     , ["We don’t stop at launch. Success is measured by how your audience responds — engagement, conversions, and long-term growth. We track performance and share insights so you see real outcomes, not just a polished design.", "디자인뿐 아니라 콘텐츠 전달, 모바일 사용성, 링크와 기능, 배포 상태까지 함께 검수합니다."]
     , ["Can we start small and scale later?", "작게 시작해 나중에 확장할 수 있나요?"]
     , ["Yes. Many clients begin with a focused project like a brand refresh or website revamp. As their needs grow, we expand into campaigns, strategy, and ongoing support. Flexibility is built into how we work.", "가능합니다. 현재 필요한 페이지부터 만들고 이후 콘텐츠와 기능을 추가할 수 있도록 구성합니다."]
-    , ["WHAT OUR CLIENTS SAY", "WEBCANBE STANDARD"]
-    , ["Partnerships that last, results that stick.", "완성도를 만드는 기준"]
-    , ["From kickoff to launch, brands trust us to stay close, adapt fast, and deliver without any drama.", "빠른 진행보다 중요한 것은 방향과 디테일을 끝까지 지키는 것입니다."]
-    , ["WRITE A REVIEW", "제작 상담하기"]
-    , ["Spotlight", "PROJECT STANDARD"]
-    , ["“They didn’t just hit the brief, they raised it. The project felt collaborative from start to finish, with clear updates, quick turns, and a final product that carried our brand further than we imagined.”", "목표와 콘텐츠를 먼저 정리하고, 필요한 결정은 단계마다 함께 확인합니다."]
-    , ["Samuel Laronde", "PROCESS"]
-    , ["Marketing Lead", "명확한 제작 흐름"]
-    , ["September 2025", "WebCanBe"]
-    , ["“From kickoff to launch, the process was fast-moving but never chaotic. Create kept everyone in the loop, solved issues before they became problems, and shipped exactly when they said they would.”", "진행 상황을 투명하게 공유하고, 문제는 배포 전에 확인해 해결합니다."]
-    , ["Matthew Parker", "LAUNCH"]
-    , ["Head of Product", "검수와 배포"]
-    , ["“They didn’t just design a website, they built a framework we can grow with. Every decision was backed with clarity, and the final product looks polished while staying practical for our team.”", "지금 필요한 화면을 만들고, 이후 콘텐츠와 기능을 확장할 수 있도록 설계합니다."]
-    , ["Maya Chen", "STRUCTURE"]
-    , ["Brand Manager", "확장 가능한 구조"]
-    , ["“They don’t just deliver a project and walk away. The team stayed close, fixed details on the fly, and made sure launch was smooth.”", "오픈 이후에도 필요한 수정과 운영 지원을 이어갈 수 있습니다."]
-    , ["Mark Miller", "SUPPORT"]
-    , ["Creative Lead", "오픈 이후 지원"]
-    , ["“Working with Create felt effortless. They understood our vision from day one and kept us aligned through clear milestones. The end result was a site that actually elevated our brand voice, not just dressed it up.”", "브랜드의 목소리가 화면과 콘텐츠 전체에서 일관되게 보이도록 정리합니다."]
-    , ["Jordan Ellis", "DESIGN"]
-    , ["Creative Director", "브랜드와 콘텐츠"]
-    , ["BLACKWELL", "CREATOR WEBSITE"]
-    , ["“Every meeting felt productive, every deadline was hit, and the end result nailed our brand better than we could describe.”", "필요한 논의만 선명하게 진행하고, 결정된 범위에 집중해 완성합니다."]
-    , ["Head of Design", "프로젝트 디렉션"]
-    , ["“Create took our messy brief and turned it into a site we’re proud to show. Fast, sharp, and no overthinking.”", "흩어진 자료를 정리해 자신 있게 보여줄 수 있는 공식 사이트로 만듭니다."]
-    , ["MADISON SQUARE", "PERSONAL BRAND"]
-    , ["Madison Square", "PERSONAL BRAND"]
-    , ["“Create has a rare balance of speed and detail. They made complex flows simple, turned feedback into quick iterations, and delivered a product that’s both user-friendly and brand-right.”", "복잡한 흐름은 단순하게 정리하고, 피드백은 빠르게 반영해 디테일까지 완성합니다."]
-    , ["Margaret Brooks", "INTERACTION"]
-    , ["What bubbles up needs to be shared", "제작 이야기를 나눕니다"]
-    , ["—— From new launches to design explorations and team experiments, this is where ideas take shape and stories unfold.", "크리에이터 웹사이트의 구조와 콘텐츠, 운영에 관한 실용적인 가이드입니다."]
-    , ["Whispers - Blog", "제작 가이드"]
-    , ["From small sparks to big ideas.", "작은 아이디어부터 공식 사이트까지."]
-    , ["Articles, notes on creativity, strategy and making things work.", "기획과 디자인, 실제 제작에 필요한 내용을 정리합니다."]
+    , ["WHAT OUR CLIENTS SAY", "DEMO PROJECT REVIEW"]
+    , ["Partnerships that last, results that stick.", "사이트가 생기자, 보이는 규모가 달라졌습니다."]
+    , ["From kickoff to launch, brands trust us to stay close, adapt fast, and deliver without any drama.", "아래 후기는 JUNE PARK 콘셉트 프로젝트의 사용자 시나리오입니다."]
+    , ["WRITE A REVIEW", "프로젝트 상담하기"]
+    , ["Spotlight", "DEMO PROJECT"]
+    , ["“They didn’t just hit the brief, they raised it. The project felt collaborative from start to finish, with clear updates, quick turns, and a final product that carried our brand further than we imagined.”", "영상은 이미 많았지만 저를 제대로 설명하는 공간은 없었습니다. 이제 콘텐츠, 뉴스레터, 상품, 협업 문의를 한 사이트로 보여줄 수 있습니다."]
+    , ["Samuel Laronde", "JUNE PARK"]
+    , ["Marketing Lead", "CREATOR · TECHNOLOGY"]
+    , ["September 2025", "DEMO PROJECT"]
+    , ["“From kickoff to launch, the process was fast-moving but never chaotic. Create kept everyone in the loop, solved issues before they became problems, and shipped exactly when they said they would.”", "채널과 상품이 따로 놀던 느낌이 사라졌어요. 처음 방문한 사람도 제가 무엇을 하는지 바로 이해합니다."]
+    , ["Matthew Parker", "JUNE PARK"]
+    , ["Head of Product", "CREATOR · TECHNOLOGY"]
+    , ["“They didn’t just design a website, they built a framework we can grow with. Every decision was backed with clarity, and the final product looks polished while staying practical for our team.”", "단순히 예쁜 사이트가 아니라 콘텐츠, 강의, 문의가 하나의 흐름으로 정리됐습니다."]
+    , ["Maya Chen", "JUNE PARK"]
+    , ["Brand Manager", "CREATOR · TECHNOLOGY"]
+    , ["“They don’t just deliver a project and walk away. The team stayed close, fixed details on the fly, and made sure launch was smooth.”", "공개 뒤에도 직접 콘텐츠를 업데이트할 수 있어 운영이 훨씬 단순해졌습니다."]
+    , ["Mark Miller", "JUNE PARK"]
+    , ["Creative Lead", "CREATOR · TECHNOLOGY"]
+    , ["“Working with Create felt effortless. They understood our vision from day one and kept us aligned through clear milestones. The end result was a site that actually elevated our brand voice, not just dressed it up.”", "브랜드가 훨씬 큰 규모로 보이기 시작했고, 협업 문의를 받을 때도 공식 사이트 하나만 전달하면 됐습니다."]
+    , ["Jordan Ellis", "JUNE PARK"]
+    , ["Creative Director", "CREATOR · TECHNOLOGY"]
+    , ["BLACKWELL", "DEMO PROJECT"]
+    , ["“Every meeting felt productive, every deadline was hit, and the end result nailed our brand better than we could describe.”", "첫 화면만 봐도 제가 누구이고 무엇을 제공하는지 분명해졌습니다."]
+    , ["Head of Design", "CREATOR · TECHNOLOGY"]
+    , ["“Create took our messy brief and turned it into a site we’re proud to show. Fast, sharp, and no overthinking.”", "흩어진 콘텐츠를 정리하니 방문자가 다음에 무엇을 해야 하는지도 명확해졌습니다."]
+    , ["MADISON SQUARE", "JUNE PARK"]
+    , ["Madison Square", "JUNE PARK"]
+    , ["“Create has a rare balance of speed and detail. They made complex flows simple, turned feedback into quick iterations, and delivered a product that’s both user-friendly and brand-right.”", "복잡한 설명 없이도 콘텐츠와 사업이 하나의 인상으로 전달됩니다."]
+    , ["Margaret Brooks", "JUNE PARK"]
+    , ["What bubbles up needs to be shared", "사이트는 공개된 뒤부터 시작됩니다"]
+    , ["—— From new launches to design explorations and team experiments, this is where ideas take shape and stories unfold.", "구조를 잡고 콘텐츠를 쌓고 운영하는 데 필요한 판단을 정리합니다."]
+    , ["Whispers - Blog", "WEBSITE GUIDE"]
+    , ["From small sparks to big ideas.", "만들기 전에 알아야 할 것들"]
+    , ["Articles, notes on creativity, strategy and making things work.", "기획, 디자인, 운영에 필요한 내용을 짧고 분명하게 정리합니다."]
     , ["Studio projects and case studies", "크리에이터 사이트 사례"]
     , ["Notes on design and process", "디자인과 제작 과정"]
     , ["Ideas, insights, and inspiration", "콘텐츠와 운영 아이디어"]
     , ["Rethinking Product Design with Intelligence", "콘텐츠를 공식 사이트로 정리하는 법"]
     , ["A SaaS product team approached us with an AI add-on. The challenge was to rethink AI not as a widget but as a foundation for smarter systems.", "여러 플랫폼에 흩어진 콘텐츠를 방문자가 이해하기 쉬운 하나의 흐름으로 정리합니다."]
-    , ["Digital Identities Across Cultures", "개인 브랜드의 디지털 아이덴티티"]
-    , ["Numeriq approached us to redefine their online presence. The challenge was balancing their street-level origins with their luxury aspirations.", "프로필과 활동, 상품이 같은 인상으로 이어지도록 웹사이트의 기준을 세웁니다."]
-    , ["Architecture in the Digital Age", "포트폴리오를 웹 경험으로 만드는 법"]
-    , ["An architecture studio wanted its online presence to feel as ambitious as its buildings. The challenge was to move beyond static portfolios and reflect authority and vision.", "작업을 나열하는 데서 그치지 않고 시선의 흐름과 인터랙션으로 포트폴리오를 보여줍니다."]
+    , ["Digital Identities Across Cultures", "링크 모음과 공식 사이트는 무엇이 다른가"]
+    , ["Numeriq approached us to redefine their online presence. The challenge was balancing their street-level origins with their luxury aspirations.", "링크를 나열하는 화면과 사람을 기억하게 만드는 공식 공간의 차이를 살펴봅니다."]
+    , ["Architecture in the Digital Age", "개인 브랜드의 첫 화면은 무엇을 보여줘야 할까"]
+    , ["An architecture studio wanted its online presence to feel as ambitious as its buildings. The challenge was to move beyond static portfolios and reflect authority and vision.", "첫 5초 안에 누구인지, 무엇을 하는지, 어디로 가야 하는지 보여주는 기준입니다."]
     , ["The Future of E-Mobility Marketing from Lindholm", "크리에이터 커머스의 사이트 구조"]
     , ["Lindholm launched CREATOR 877, a new e-bike. The challenge was positioning it as both a lifestyle product and a piece of cutting-edge mobility tech.", "콘텐츠에서 상품과 강의, 뉴스레터까지 자연스럽게 이어지는 구조를 설계합니다."]
     , ["UX Strategist", "WebCanBe Guide"]
-    , ["How Automotive Brands Win Online", "브랜드를 보여주는 온라인 공간"]
-    , ["An automotive brand asked us to build a digital showroom. The challenge was giving customers an online experience that could rival the thrill of being behind the wheel.", "링크 모음이 아니라 이름과 활동의 가치를 충분히 보여주는 공식 공간을 만듭니다."]
+    , ["How Automotive Brands Win Online", "오픈 이후에도 사이트를 살아 있게 만드는 법"]
+    , ["An automotive brand asked us to build a digital showroom. The challenge was giving customers an online experience that could rival the thrill of being behind the wheel.", "새 콘텐츠와 상품을 꾸준히 반영할 수 있는 운영 구조를 살펴봅니다."]
     , ["More Whispers", "가이드 더 보기"]
     , ["9 years", "ONE STUDIO"]
-    , ["Building lasting partnerships, scaling brands, and shipping work that stands out.", "처음 상담부터 공개 이후까지 한 팀이 함께합니다."]
-    , ["120+ projects delivered", "맞춤 구조 설계"]
-    , ["99% on-time launches", "반응형 개발"]
-    , ["84% average boost in engagement", "런칭과 운영 지원"]
-    , ["\"We listen first, stay transparent, and deliver what we promise.", "먼저 듣고, 과정을 투명하게 공유하며, 약속한 범위까지 완성합니다."]
-    , ["Every project matters to us.\"", "모든 프로젝트를 같은 기준으로 다룹니다."]
+    , ["Building lasting partnerships, scaling brands, and shipping work that stands out.", "좋은 콘텐츠를 링크 하나에 묻어두지 마세요."]
+    , ["120+ projects delivered", "방향부터 공개까지"]
+    , ["99% on-time launches", "모바일과 인터랙션"]
+    , ["84% average boost in engagement", "오픈 이후 운영"]
+    , ["\"We listen first, stay transparent, and deliver what we promise.", "프로젝트를 들려주세요. 필요한 구조와 제작 범위를 먼저 정리해드립니다."]
+    , ["Every project matters to us.\"", "상담은 creator@webcanbe.com에서 시작할 수 있습니다."]
     , ["CEO of Create®", "WebCanBe"]
     , ["BOOK AN INTRO CALL", "제작 상담하기"]
     , ["Get the latest news, insights directly to your inbox.", "프로젝트 내용을 남겨주시면 확인 후 연락드립니다."]
@@ -348,17 +369,20 @@
   ]);
 
   const benefitCardCopy = new Map([
-    ["Industries served", "한곳에"],
-    ["24h", "소통"],
-    ["Average Response Time", "빠르게 확인"],
-    ["First Draft Approved", "화면에 맞게"],
-    ["Ship on-Time", "배포까지"],
-    ["Core", "기본"],
-    ["For startups and first launches", "공식 사이트의 핵심부터"],
-    ["Studio", "맞춤"],
-    ["For growing teams and serious builds", "브랜드에 맞춘 완전한 구성"],
-    ["Scale", "인터랙티브"],
-    ["For established teams and long-term growth", "모션과 기능까지 맞춤 제작"]
+    ["Industries served", "한 흐름에"],
+    ["24h", "빠른 피드백"],
+    ["Average Response Time", "결정은 선명하게"],
+    ["First Draft Approved", "모든 화면에"],
+    ["Ship on-Time", "실제 공개까지"],
+    ["Core", "START"],
+    ["START", "START"],
+    ["For startups and first launches", "빠르게 시작하는 공식 사이트"],
+    ["Studio", "CUSTOM"],
+    ["소개", "CUSTOM"],
+    ["For growing teams and serious builds", "브랜드 전체를 설계하는 맞춤 제작"],
+    ["Scale", "EXPAND"],
+    ["EXPAND", "EXPAND"],
+    ["For established teams and long-term growth", "콘텐츠와 판매를 확장하는 사이트"]
   ]);
 
   const replaceTextWithin = (root, replacements) => {
@@ -401,29 +425,42 @@
 
   const replaceAnimatedCopy = () => {
     const entries = [
-      ['Digital experiences that connect, scale and perform', '크리에이터를 위한 공식 웹사이트'],
-      ['Digital experiences that connect, scale and perform.', '크리에이터를 위한 공식 웹사이트'],
+      ['Digital experiences that connect, scale and perform', '당신의 이름을 하나의 브랜드로'],
+      ['Digital experiences that connect, scale and perform.', '당신의 이름을 하나의 브랜드로'],
       ['SEE WORK', '서비스 보기'],
       ["LET'S CHAT", '제작 상담하기'],
-      ['120+', '맞춤형'],
+      ['120+', '방향부터 공개까지'],
       ['Create\\Studio', 'WebCanBe'],
-      ['WE LISTEN', '듣습니다'],
-      ['WE IMAGINE', '설계합니다'],
-      ['WE CREATE', '만듭니다'],
-      ['beautiful things', '웹으로 완성'],
-      ['Services built on process, precision, and people.', '상담부터 배포까지'],
-      ['We combine strategy, design, content, and technology, giving you a single partner for every stage of your brand’s growth.', '01 상담 · 02 구조 · 03 디자인 · 04 개발 · 05 배포'],
-      ['Our process in motion', '하나의 흐름으로 완성합니다'],
-      ['Designed to Make Your Life Easier', '좋은 웹사이트는 과정도 명확해야 합니다'],
-      ['The proof behind our work', '흩어진 링크 대신 하나의 공식 공간'],
-      ['Brands who are part of our success story', '사이트 하나에도 브랜드의 차이는 보입니다'],
+      ['WE LISTEN', '채널은 있습니다'],
+      ['WE IMAGINE', '브랜드가 필요합니다'],
+      ['WE CREATE', '이름이 기억되도록'],
+      ['beautiful things', '웹에 남깁니다'],
+      ['Services built on process, precision, and people.', '아이디어에서 공개까지'],
+      ['We combine strategy, design, content, and technology, giving you a single partner for every stage of your brand’s growth.', '01 방향 · 02 구조 · 03 디자인 · 04 개발 · 05 공개'],
+      ['Our process in motion', '생각이 화면이 되는 과정'],
+      ['Designed to Make Your Life Easier', '링크를 모으는 건 쉽습니다. 브랜드를 만드는 건 다릅니다'],
+      ['The proof behind our work', '조회수는 지나가도, 브랜드는 남습니다'],
+      ['Brands who are part of our success story', '사람들은 콘텐츠를 보고 들어오지만, 브랜드를 보고 기억합니다'],
       ['Brand Identity', '크리에이터 공식 사이트'],
       ['Strategy', '1인 브랜드 사이트'],
       ['Design & Innovation', '런칭 랜딩페이지'],
       ['AI Systems', '포트폴리오 사이트'],
       ['SEO', '인터랙티브 사이트'],
       ['Development', '맞춤형 웹 개발'],
-      ['The process behind our success', '복잡한 과정은 줄이고 필요한 것에 집중합니다'],
+      ['NEXT.JS', 'PERSONAL BRAND'],
+      ['TYPESCRIPT', 'CONTENT ARCHIVE'],
+      ['TAILWIND CSS', 'NEWSLETTER'],
+      ['FRAMER MOTION', 'PARTNERSHIP INQUIRY'],
+      ['CLOUDFLARE CDN', 'DEMO PROJECT'],
+      ['REACT', 'CREATOR COMMERCE'],
+      ['WEBGL', 'COURSE · SHOP'],
+      ['NODE.JS', 'LAUNCH PAGE'],
+      ['AWS LAMBDA', 'EMAIL CAPTURE'],
+      ['OPENAI EMBEDDINGS', 'DEMO PROJECT'],
+      ['FRAMER', 'PORTFOLIO'],
+      ['GSAP', 'SERVICES'],
+      ['META ADS INTEGRATION', 'DEMO PROJECT'],
+      ['The process behind our success', '좋은 사이트는 우연히 나오지 않습니다'],
       ['Clearing doubts and concerns', '자주 묻는 질문'],
       ['What kind of projects does Create take on?', '어떤 크리에이터에게 적합한가요?'],
       ['How do you approach new projects?', '기존 사이트 리뉴얼도 가능한가요?'],
@@ -437,39 +474,39 @@
       ['Every project is led by senior designers and developers. No handoffs to juniors figuring things out on the fly.', '프로젝트 방향에 따라 스크롤과 전환, 마우스 반응을 적용할 수 있습니다.'],
       ['We keep things simple: one main contact, weekly updates, and quick replies when you need us.', '최종 사이트 배포와 기본 도메인 연결까지 진행할 수 있습니다.'],
       ['We can stay involved — fixing issues, rolling out updates, or handling ongoing support if that’s part of your plan.', '필요에 따라 외부 결제·판매 플랫폼 또는 맞춤 기능을 연결할 수 있습니다.'],
-      ['Let us inspire your next project', '웹에 남기세요'],
+      ['Let us inspire your next project', '당신의 이름을 웹에 남기세요'],
       ['BOOK A CALL', '상담하기'],
       ['Keep you in the loop.', 'WebCanBe와 시작하세요'],
       ['Get the latest news, insights directly to your inbox.', '크리에이터와 1인 브랜드를 위한 웹사이트 스튜디오'],
-      ['we listen.', '듣고'],
-      ['we imagine.', '설계하고'],
-      ['we create.', '만듭니다'],
-      ['Ideas', '당신에게서 시작하는'],
-      ['that start with you', '하나뿐인 웹사이트'],
-      ['Client Satisfaction Rate', '제작 원칙'],
-      ['99.9%', '맞춤형'],
-      ['12+', '콘텐츠'],
-      ['INDUSTRIES SERVED', '활동을 한곳에'],
-      ['24H', '소통'],
-      ['AVERAGE RESPONSE TIME', '빠르게 확인'],
-      ['96%', '모바일'],
-      ['FIRST DRAFT APPROVED', '화면에 맞게'],
+      ['we listen.', '먼저 듣고'],
+      ['we imagine.', '정확히 정하고'],
+      ['we create.', '끝까지 만듭니다'],
+      ['Ideas', '당신의 이름을'],
+      ['that start with you', '남는 브랜드로'],
+      ['Client Satisfaction Rate', '맞춤 구조'],
+      ['99.9%', '필요한 만큼'],
+      ['12+', '콘텐츠·상품·문의'],
+      ['INDUSTRIES SERVED', '한 흐름에'],
+      ['24H', '빠른 피드백'],
+      ['AVERAGE RESPONSE TIME', '결정은 선명하게'],
+      ['96%', '반응형'],
+      ['FIRST DRAFT APPROVED', '모든 화면에'],
       ['99%', '런칭'],
-      ['SHIP ON-TIME', '배포까지'],
-      ['5 / 5 (98 reviews)', '하나의 제작 흐름'],
-      ['Backed by feedback from 120+ brands we’ve worked with.', '디자인부터 배포까지 한 흐름으로 진행합니다.'],
+      ['SHIP ON-TIME', '실제 공개까지'],
+      ['5 / 5 (98 reviews)', '오픈 이후'],
+      ['Backed by feedback from 120+ brands we’ve worked with.', '수정과 확장까지 이어갈 수 있습니다.'],
       ['No reheated or pre-made.', '정해진 틀을 쓰지 않습니다.'],
       ['Every project starts fresh.', '처음부터 프로젝트에 맞게.'],
       ['Custom work', '맞춤 제작'],
       ['from day one.', '첫 단계부터.'],
-      ['Simple Pricing', '명확한 제작 방식'],
-      ['Plans that scale with your project and give you room for unlimited creative opportunities.', '필요한 것부터 정리하고 범위에 맞춰 제작합니다.'],
-      ['CORE', '기본'],
-      ['FOR STARTUPS AND FIRST LAUNCHES', '공식 사이트의 핵심부터'],
-      ['STUDIO', '맞춤'],
-      ['FOR GROWING TEAMS AND SERIOUS BUILDS', '브랜드에 맞춘 완전한 구성'],
-      ['SCALE', '인터랙티브'],
-      ['FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH', '모션과 기능까지 맞춤 제작'],
+      ['Simple Pricing', '시작은 분명하게'],
+      ['Plans that scale with your project and give you room for unlimited creative opportunities.', '필요한 범위와 다음 단계를 한눈에 비교하세요.'],
+      ['CORE', 'START'],
+      ['FOR STARTUPS AND FIRST LAUNCHES', '빠르게 시작하는 공식 사이트'],
+      ['STUDIO', '소개'],
+      ['FOR GROWING TEAMS AND SERIOUS BUILDS', '브랜드 전체를 설계하는 맞춤 제작'],
+      ['SCALE', 'EXPAND'],
+      ['FOR ESTABLISHED TEAMS AND LONG-TERM GROWTH', '콘텐츠와 판매를 확장하는 사이트'],
       ['Pick a plan that grows with you and keeps creative costs predictable.', '필요한 범위를 확인한 뒤 비용을 안내합니다.'],
       ['Explore plans', '프로젝트 상담하기'],
       ['Built for the long run', '오픈 이후까지'],
@@ -482,9 +519,9 @@
       ['Next Availability', 'CONTACT'],
       ['from 14 September 2025', 'creator@webcanbe.com'],
       ['Book now', '제작 상담하기'],
-      ['What Our Clients Say', 'WEBCANBE STANDARD'],
-      ['What our clients say', 'WEBCANBE STANDARD'],
-      ['Madison Square', 'PERSONAL BRAND'],
+      ['What Our Clients Say', 'DEMO PROJECT REVIEW'],
+      ['What our clients say', 'DEMO PROJECT REVIEW'],
+      ['Madison Square', 'JUNE PARK'],
       ['9 years', 'ONE STUDIO']
     ];
 
@@ -580,13 +617,15 @@
   const setMeta = () => {
     document.documentElement.lang = "ko";
     document.title = "WebCanBe — 크리에이터 웹사이트 스튜디오";
-    const description = "크리에이터와 1인 브랜드의 콘텐츠, 상품, 활동을 하나의 공식 웹사이트에 담는 WebCanBe.";
+    const description = "WebCanBe는 크리에이터와 개인 브랜드를 위한 고급 공식 웹사이트를 디자인하고 개발합니다.";
     document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach((el) => el.content = description);
     document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach((el) => el.content = document.title);
   };
 
   const setLinks = () => {
     const staticRoutes = new Map([
+      ['/work', '/work.html'],
+      ['/whispers', '/whispers.html'],
       ['/studio', '/studio.html'],
       ['/work/aurelis-beach', '/work/aurelis-beach.html'],
       ['/work/blackwell-motors', '/work/blackwell-motors.html'],
@@ -612,6 +651,11 @@
     document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href^="tel:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href*="dub.sh/create"], a[href*="framerpod"], a[href*="tamasbodo"], a[href*="linkedin.com"], a[href*="whatsapp.com"], a[href*="glassdoor.com"]').forEach((a) => a.href = "contact.html");
+    document.querySelectorAll('a[href*="instagram.com"], a[href*="facebook.com"], a[href*="threads.com"]').forEach((a) => {
+      a.removeAttribute('href');
+      a.removeAttribute('target');
+      a.setAttribute('aria-hidden', 'true');
+    });
     document.querySelectorAll('a[href*="framerpod"], a[href*="framer.com"]').forEach((a) => {
       if (/template|more templates/i.test(a.textContent)) a.remove();
     });
@@ -620,11 +664,22 @@
         const url = new URL(a.href, window.location.href);
         const target = staticRoutes.get(url.pathname.replace(/\/$/, ''));
         if (target) a.href = `${target}${url.search}${url.hash}`;
+        if (/^\/work(?:\.html)?\/?$/.test(url.pathname)) a.href = '#services';
+        if (/^\/studio(?:\.html)?\/?$/.test(url.pathname)) a.href = '#about';
+        if (/^\/whispers\/?$/.test(url.pathname)) a.href = 'whispers.html';
+        if (url.pathname === '/') a.href = 'index.html';
+        if (/^\/404(?:\.html)?\/?$/.test(url.pathname)) {
+          a.hidden = true;
+          a.setAttribute('aria-hidden', 'true');
+        }
       } catch (_) {}
-      if (/제작 상담하기|프로젝트 상담하기|LET'S CHAT/i.test(a.textContent)) a.href = "contact.html";
-      if (/서비스 보기|서비스/.test(a.textContent)) a.href = "#services";
-      if (/소개/.test(a.textContent)) a.href = "#about";
-      if (/가이드/.test(a.textContent)) a.href = "#faq";
+      const label = a.textContent.replace(/\s+/g, ' ').trim();
+      if (label.length < 80 && /제작 상담하기|프로젝트 상담하기|LET'S CHAT/i.test(label)) a.href = "contact.html";
+      if (label.length < 40 && /서비스 보기|^서비스(?: 서비스)?$/.test(label)) a.href = "#services";
+      if (label.length < 40 && /^소개(?: 소개)?$/.test(label)) a.href = "#about";
+      if (label.length < 60 && /가이드 더 보기|^가이드(?: 가이드)?$/.test(label)) a.href = "whispers.html";
+      if (/^홈(?: 홈)?$/.test(label)) a.href = "index.html";
+      if (/^404(?: 404)?$/.test(label)) a.closest('[data-framer-name]')?.setAttribute('hidden', '');
     });
   };
 
@@ -662,7 +717,7 @@
 
   let dynamicSectionRefresh;
   const observeDynamicSections = () => {
-    ['Section | Introduction', 'Section | Services', 'Section | How we work', 'Section | Why Choose Us', 'Section | Testimonial', 'Section | Blog Teaser', 'Section | Book a Call', 'Footer'].forEach((name) => {
+    ['Section | Introduction', 'Section | Featured Projects', 'Section | Statistics', 'Section | Services', 'Section | How we work', 'Section | Why Choose Us', 'Section | Pricing', 'Section | The Team', 'Section | Testimonial', 'Section | Blog Teaser', 'Section | Book a Call', 'Footer'].forEach((name) => {
       document.querySelectorAll(`[data-framer-name="${name}"]`).forEach((section) => {
         if (section.dataset.webcanbeObserved === 'true') return;
         section.dataset.webcanbeObserved = 'true';
@@ -672,6 +727,24 @@
         }).observe(section, { childList: true, subtree: true, characterData: true });
       });
     });
+  };
+
+  let linkTargetRefresh;
+  let linkTargetObserver;
+  const observeLinkTargets = () => {
+    if (!document.body) return;
+    if (!linkTargetObserver) {
+      linkTargetObserver = new MutationObserver(() => {
+        window.clearTimeout(linkTargetRefresh);
+        linkTargetRefresh = window.setTimeout(() => {
+          linkTargetObserver.disconnect();
+          refreshContent();
+          observeLinkTargets();
+        }, 80);
+      });
+    }
+    linkTargetObserver.disconnect();
+    linkTargetObserver.observe(document.body, { attributes: true, attributeFilter: ['href'], subtree: true });
   };
 
   const curateHome = () => {
@@ -694,28 +767,34 @@
     const replaceImage = (selector, source, alt) => document.querySelectorAll(selector).forEach((image) => {
       image.src = source; image.removeAttribute('srcset'); image.alt = alt;
     });
-    replaceImage('img[alt^="Modern beachfront villa"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 공식 웹사이트 쇼케이스');
-    replaceImage('img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 웹사이트 쇼케이스');
-    replaceImage('img[alt^="Close-up of black road bike"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 커머스 웹사이트 쇼케이스');
-    replaceImage('img[alt^="Abstract dark background"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 웹사이트 비주얼');
-    replaceImage('img[alt="Abstract 3D composition of floating spheres and cubes in monochrome tones with soft lighting."]', 'assets/webcanbe-design-process.png', 'WebCanBe 웹사이트 디자인 과정');
-    replaceImage('img[alt^="A person in a white hoodie and joggers"]', 'assets/webcanbe-contact-creator.png', '개인 브랜드 크리에이터 에디토리얼 포트레이트');
-    replaceImage('img[alt="Modern glass building photographed from below"]', 'assets/webcanbe-creator-site-showcase.png', '크리에이터 포트폴리오 웹사이트 쇼케이스');
-    replaceImage('img[alt="Electric Bike behind Pillar"]', 'assets/webcanbe-creator-workspace.png', '크리에이터 커머스 웹사이트 제작 과정');
-    replaceImage('img[alt="red sports car in front of a showroom with bright lights"]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 공식 웹사이트 포트레이트');
+    replaceImage('[data-framer-name="Section | Featured Projects"] img[alt^="Modern beachfront villa"]', 'assets/webcanbe-creator-site-showcase.png', 'JUNE PARK 개인 브랜드 웹사이트 데모 프로젝트');
+    replaceImage('[data-framer-name="Section | Featured Projects"] img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-showcase-mina-commerce.png', 'MINA SEO 크리에이터 커머스 데모 프로젝트');
+    replaceImage('[data-framer-name="Section | Featured Projects"] img[alt^="Close-up of black road bike"]', 'assets/webcanbe-showcase-daniel-brand.png', 'DANIEL KIM 개인 브랜드 웹사이트 데모 프로젝트');
+    replaceImage('[data-framer-name="Section | How we work"] img[alt^="Abstract dark background"]', 'assets/webcanbe-process-storyboard.png', '크리에이터 웹사이트를 설계하는 WebCanBe의 제작 과정');
+    replaceImage('[data-framer-name="Section | How we work"] img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-process-detail.png', '개인 브랜드 웹사이트 프로토타입 검수 과정');
+    replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="Abstract 3D composition of floating spheres and cubes in monochrome tones with soft lighting."]', 'assets/webcanbe-guide-content-structure.png', '콘텐츠가 많아질수록 웹사이트 구조가 중요한 이유');
+    replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt^="A person in a white hoodie and joggers"]', 'assets/webcanbe-guide-link-vs-site.png', '링크 모음과 공식 웹사이트의 차이');
+    replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="Modern glass building photographed from below"]', 'assets/webcanbe-guide-first-screen.png', '개인 브랜드 웹사이트 첫 화면을 설계하는 과정');
+    replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="Electric Bike behind Pillar"]', 'assets/webcanbe-guide-creator-commerce.png', '크리에이터 커머스 웹사이트의 콘텐츠 흐름');
+    replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="red sports car in front of a showroom with bright lights"]', 'assets/webcanbe-guide-site-operations.png', '오픈 이후 크리에이터 웹사이트를 운영하는 모습');
     replaceImage('img[alt="Logo"]', 'assets/webcanbe-wordmark.svg', 'WebCanBe');
     replaceImage('img[src*="aJxLydBlZv1oYCCj63OZdiRqLuQ"]', 'assets/webcanbe-wordmark.svg', 'WebCanBe');
     replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and red covers"]', 'assets/webcanbe-design-process.png', 'WebCanBe의 맞춤 웹사이트 설계 과정');
     replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-creator-workspace.png', '개인 브랜드 웹사이트를 설계하는 크리에이터 스튜디오');
-    replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 웹사이트 쇼케이스');
-    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and red covers"]', 'assets/webcanbe-design-process.png', 'WebCanBe 맞춤 웹사이트 설계 자료');
-    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-creator-workspace.png', '크리에이터 웹사이트 제작 과정');
-    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-creator-site-showcase.png', 'WebCanBe 크리에이터 사이트 쇼케이스');
-    replaceImage('img[alt="Person wearing white full-face hood with only eyes visible."]', 'assets/webcanbe-creator-workspace.png', '개인 브랜드 웹사이트를 설계하는 스튜디오');
-    replaceImage('img[alt="Man wearing white bunny hat with fake glasses and mustache design."]', 'assets/webcanbe-design-process.png', 'WebCanBe 웹사이트 디자인 과정');
-    replaceImage('img[alt="an in black hoodie and sunglasses holding finger to lips."]', 'assets/webcanbe-creator-portrait.png', '개인 브랜드 크리에이터 에디토리얼 포트레이트');
-    replaceImage('img[alt="Person in sunglasses making playful face with tongue out."]', 'assets/webcanbe-contact-creator.png', '크리에이터 웹사이트를 준비하는 개인 브랜드');
+    replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-benefit-launch.png', '크리에이터 웹사이트의 반응형 검수와 공개 준비');
+    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and red covers"]', 'assets/webcanbe-option-start.png', 'START 공식 웹사이트 제작 범위');
+    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-option-custom.png', 'CUSTOM 개인 브랜드 웹사이트 제작 범위');
+    replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-option-expand.png', 'EXPAND 크리에이터 커머스 제작 범위');
     replaceImage('[data-framer-name="Section | Book a Call"] img[alt^="Man with short hair and beard"]', 'assets/webcanbe-contact-creator.png', '프로젝트를 준비하는 개인 브랜드 크리에이터');
+    replaceImage('[data-framer-name="Section | Testimonial"] img[alt^="Smiling man wearing glasses and a grey shirt"]', 'assets/webcanbe-demo-review-june.png', 'JUNE PARK 데모 프로젝트 리뷰 포트레이트');
+    replaceImage('[data-framer-name="Section | Testimonial"] [data-framer-name="Avatar"] img', 'assets/webcanbe-demo-review-june.png', 'JUNE PARK 데모 프로젝트 리뷰 포트레이트');
+    document.querySelectorAll('[data-framer-name="Section | Testimonial"] p').forEach((label) => {
+      const value = label.textContent.replace(/\s+/g, ' ').trim();
+      if (/Backed by feedback from/i.test(value)) label.textContent = 'JUNE PARK 데모 프로젝트의 가상 사용자 후기입니다.';
+      else if (/^(Rachel Morgan|Edward Bright|WEBCANBE)$/i.test(value)) label.textContent = 'JUNE PARK';
+      else if (/^(콘텐츠 구조|INTERACTION)$/i.test(value)) label.textContent = 'CREATOR · TECHNOLOGY';
+      else if (value === '오픈 이후') label.textContent = 'FICTIONAL TESTIMONIAL';
+    });
     document.querySelectorAll('[data-framer-name="Section | Testimonial"] [data-framer-name="Logo Mark"] img').forEach((logo) => {
       logo.src = 'assets/webcanbe-wordmark.svg';
       logo.alt = 'WebCanBe';
@@ -724,10 +803,9 @@
     });
     document.querySelectorAll('[data-framer-name="Section | Testimonial"] [data-framer-name="Stars"]').forEach((stars) => stars.style.display = 'none');
     document.querySelectorAll('[data-framer-name="Menu"] [data-framer-name="Logo Mark"] img').forEach((logo) => logo.style.filter = 'invert(1)');
-    replaceImage('[data-framer-name^="Benefit Card 06"] img[alt^="3D character wearing an orange jumpsuit"]', 'assets/webcanbe-contact-creator.png', '개인 브랜드를 운영하는 크리에이터의 에디토리얼 포트레이트');
+    replaceImage('[data-framer-name^="Benefit Card 06"] img[alt^="3D character wearing an orange jumpsuit"]', 'assets/webcanbe-benefit-launch.png', '크리에이터 웹사이트의 반응형 검수와 공개 준비');
     document.querySelectorAll('[data-framer-name="Benefit Cards"] [data-framer-name="Stars"]').forEach((stars) => stars.style.display = 'none');
     document.querySelectorAll('[data-framer-name^="Benefit Card 06"] video').forEach((video) => {
-      if (video.poster.endsWith('assets/webcanbe-creator-workspace.png')) return;
       video.pause();
       video.poster = 'assets/webcanbe-creator-workspace.png';
       video.removeAttribute('src');
@@ -736,15 +814,150 @@
       video.load();
     });
     document.querySelectorAll('[data-framer-name^="Benefit Card 06"] a').forEach((link) => link.href = 'contact.html');
+    document.querySelectorAll('[data-framer-name="Section | Hero"] video').forEach((video) => {
+      const control = video.closest('[data-framer-name="Desktop"]') || video.parentElement;
+      control?.querySelectorAll('a').forEach((link) => {
+        link.removeAttribute('href');
+        link.removeAttribute('target');
+      });
+      if (!control || control.dataset.webcanbeVideoControl === 'true') return;
+      control.dataset.webcanbeVideoControl = 'true';
+      control.setAttribute('role', 'button');
+      control.setAttribute('tabindex', '0');
+      control.setAttribute('aria-label', 'Hero 영상 재생 또는 일시정지');
+      const toggleVideo = (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        if (video.paused) video.play().catch(() => {});
+        else video.pause();
+      };
+      control.addEventListener('click', toggleVideo, true);
+      control.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') toggleVideo(event);
+      }, true);
+    });
+    document.querySelectorAll('[data-framer-name="Section | Hero"] number-flow-react[aria-label="120+"]').forEach((counter) => {
+      counter.remove();
+    });
+    document.querySelectorAll('[data-framer-name="Section | Hero"] [data-framer-name="Phone"] p').forEach((label) => {
+      if (label.textContent.includes('크리에이터와 개인 브랜드를 위한 고급 공식 웹사이트 제작 스튜디오')) {
+        label.textContent = '맞춤 설계 · 공식 웹사이트';
+      }
+    });
+    document.querySelectorAll('[data-framer-name="Section | Featured Projects"] a[data-framer-name="Image"]').forEach((link) => {
+      link.removeAttribute('href');
+      link.removeAttribute('target');
+      link.setAttribute('aria-label', '데모 프로젝트 비주얼');
+      link.style.cursor = 'default';
+    });
+    const showcaseDetails = new Map([
+      ['NEXT.JS', 'PERSONAL BRAND'], ['TYPESCRIPT', 'CONTENT ARCHIVE'],
+      ['TAILWINDCSS', 'NEWSLETTER'], ['FRAMERMOTION', 'PARTNERSHIP INQUIRY'],
+      ['CLOUDFLARECDN', 'DEMO PROJECT'], ['REACT', 'CREATOR COMMERCE'],
+      ['WEBGL', 'COURSE · SHOP'], ['NODE.JS', 'LAUNCH PAGE'],
+      ['AWSLAMBDA', 'EMAIL CAPTURE'], ['OPENAIEMBEDDINGS', 'DEMO PROJECT'],
+      ['FRAMER', 'PORTFOLIO'], ['GSAP', 'SERVICES'],
+      ['METAADSINTEGRATION', 'DEMO PROJECT']
+    ]);
+    const showcaseDetailSets = new Map([
+      ['NEXT.JS|TYPESCRIPT|TAILWIND CSS|FRAMER MOTION|CLOUDFLARE CDN', 'PERSONAL BRAND\nCONTENT ARCHIVE\nNEWSLETTER\nPARTNERSHIP INQUIRY\nDEMO PROJECT'],
+      ['REACT|WEBGL|NODE.JS|AWS LAMBDA|OPENAI EMBEDDINGS', 'CREATOR COMMERCE\nCOURSE · SHOP\nLAUNCH PAGE\nEMAIL CAPTURE\nDEMO PROJECT'],
+      ['FRAMER|NEXT.JS|GSAP|WEBGL|META ADS INTEGRATION', 'PORTFOLIO\nPERSONAL BRAND\nSERVICES\nINTERACTION\nDEMO PROJECT']
+    ]);
+    document.querySelectorAll('[data-framer-name="Section | Featured Projects"] p').forEach((label) => {
+      const setKey = label.textContent.split('\n').map((part) => part.trim().toUpperCase()).filter(Boolean).join('|');
+      const setReplacement = showcaseDetailSets.get(setKey);
+      if (setReplacement) {
+        label.textContent = setReplacement;
+        return;
+      }
+      const key = label.textContent.replace(/\s+/g, '').toUpperCase();
+      const replacement = showcaseDetails.get(key);
+      if (replacement) label.textContent = replacement;
+    });
+    const demoMetrics = ['2.1M', '17.4K', '+41%', '₩36M'];
+    document.querySelectorAll('[data-framer-name="Section | Statistics"] number-flow-react').forEach((counter, index) => {
+      const value = demoMetrics[index % demoMetrics.length];
+      const metric = document.createElement('span');
+      metric.textContent = value;
+      metric.setAttribute('role', 'img');
+      metric.setAttribute('aria-label', value);
+      metric.style.cssText = `${counter.style.cssText};display:inline-block;white-space:nowrap;`;
+      counter.replaceWith(metric);
+    });
+    document.querySelectorAll('[data-framer-name="Section | The Team"]').forEach((section) => {
+      section.style.display = 'none';
+      section.setAttribute('aria-hidden', 'true');
+    });
+    document.querySelectorAll('[data-framer-name="Menu"] p, [data-framer-name="Menu"] span').forEach((label) => {
+      if (label.children.length === 0 && /^(5|7)$/.test(label.textContent.trim())) label.style.display = 'none';
+    });
+    document.querySelectorAll('[data-framer-name="Case Study - Counter"], [data-framer-name="Whispers - Counter"]').forEach((badge) => badge.style.display = 'none');
     document.querySelectorAll('input[placeholder="Enter Your Email"]').forEach((input) => input.placeholder = '이메일을 입력하세요');
-    document.querySelectorAll('[data-framer-name="Socials Links"]').forEach((links) => links.style.visibility = 'hidden');
+    document.querySelectorAll('[data-framer-name="Socials Links"]').forEach((links) => {
+      links.style.display = 'none';
+      links.setAttribute('aria-hidden', 'true');
+    });
     document.querySelectorAll('[aria-label="Social media link"]').forEach((link) => link.setAttribute('aria-label', 'WebCanBe 링크'));
     document.querySelectorAll('[data-framer-name="Section | Pricing"] p').forEach((label) => {
       if (label.textContent.trim() === 'was') label.textContent = '기존';
     });
+    document.querySelectorAll('[data-framer-name="Section | Pricing"]').forEach((section) => {
+      replaceTextWithin(section, new Map([
+        ['소개', 'CUSTOM'], ['STARTER PLAN', 'OFFICIAL WEBSITE'],
+        ['ADVANCED PLAN', 'PERSONAL BRAND WEBSITE'], ['GROWTH PLAN', 'CREATOR COMMERCE']
+      ]));
+      const planLabels = new Map([
+        ['STARTER PLAN', 'OFFICIAL WEBSITE'], ['ADVANCED PLAN', 'PERSONAL BRAND WEBSITE'],
+        ['GROWTH PLAN', 'CREATOR COMMERCE']
+      ]);
+      section.querySelectorAll('p').forEach((label) => {
+        const replacement = planLabels.get(label.textContent.replace(/\s+/g, ' ').trim().toUpperCase());
+        if (replacement) label.textContent = replacement;
+      });
+    });
+    const guideLabels = new Map([
+      ['개발', 'CONTENT'],
+      ['웹 개발과 인터랙션', 'WEBSITE DESIGN'],
+      ['CREATOR · TECHNOLOGY', 'WEBSITE GUIDE'],
+      ['JUNE PARK', 'WebCanBe'],
+      ['WebCanBe Guide', 'WEBSITE GUIDE']
+    ]);
+    document.querySelectorAll('[data-framer-name="Section | Blog Teaser"] p').forEach((label) => {
+      const replacement = guideLabels.get(label.textContent.replace(/\s+/g, ' ').trim());
+      if (replacement) label.textContent = replacement;
+    });
+    document.querySelectorAll('[data-framer-name="Section | Blog Teaser"] a').forEach((link) => {
+      link.href = 'whispers.html';
+      link.removeAttribute('target');
+    });
+    const guideMeta = [
+      ['WebCanBe', 'CONTENT STRUCTURE', 'WEBSITE GUIDE'],
+      ['WebCanBe', 'LINK PAGE · OFFICIAL SITE', 'WEBSITE GUIDE'],
+      ['WebCanBe', 'FIRST IMPRESSION', 'WEBSITE GUIDE'],
+      ['WebCanBe', 'CREATOR COMMERCE', 'WEBSITE GUIDE'],
+      ['WebCanBe', 'SITE OPERATIONS', 'WEBSITE GUIDE']
+    ];
+    const guideCards = [...document.querySelectorAll('[data-framer-name="Section | Blog Teaser"] a')].filter((link) =>
+      /콘텐츠를 공식 사이트|링크 모음과 공식 사이트|개인 브랜드의 첫 화면|크리에이터 커머스|오픈 이후에도 사이트/.test(link.textContent)
+    );
+    guideCards.forEach((card, cardIndex) => {
+      const paragraphs = [...card.querySelectorAll('p')];
+      const labels = paragraphs.slice(0, Math.max(0, paragraphs.length - 2));
+      labels.forEach((label, labelIndex) => {
+        label.textContent = guideMeta[cardIndex]?.[labelIndex] || 'WEBSITE GUIDE';
+      });
+    });
+    document.querySelectorAll('[data-framer-name="Section | How we work"] a[href*="/work/"]').forEach((link) => {
+      link.removeAttribute('href');
+      link.removeAttribute('target');
+      link.setAttribute('aria-label', 'WebCanBe 제작 과정 비주얼');
+      link.style.cursor = 'default';
+    });
     const projectLabels = new Map([
-      ['Lindholm', 'PROCESS'], ['Monolith', 'STRUCTURE'], ['Vornberg', 'SUPPORT'],
-      ['Wendrich', 'DESIGN'], ['Aurelis', 'CREATOR WEBSITE'], ['Morisson', 'INTERACTION']
+      ['Lindholm', 'JUNE PARK'], ['Monolith', 'JUNE PARK'], ['Vornberg', 'JUNE PARK'],
+      ['Wendrich', 'JUNE PARK'], ['Aurelis', 'JUNE PARK'], ['Morisson', 'JUNE PARK']
     ]);
     document.querySelectorAll('[data-framer-name="Company"] p').forEach((label) => {
       const replacement = projectLabels.get(label.textContent.trim());
@@ -785,13 +998,24 @@
   };
 
   const refreshContent = () => { setMeta(); replaceAnimatedCopy(); replaceText(); setLinks(); removeUnsupportedClaims(); curateHome(); };
-  const run = () => { refreshContent(); observeBenefitCards(); observeDynamicSections(); setContactForm(); };
-  // Framer hydrates its exported markup asynchronously; apply content after it settles.
+  const run = () => { refreshContent(); observeBenefitCards(); observeDynamicSections(); observeLinkTargets(); setContactForm(); };
+  // Framer hydrates its exported markup asynchronously. Wait for the main
+  // module to finish before changing the DOM so React can hydrate cleanly.
+  let contentLayerStarted = false;
+  const scheduleContentLayer = () => {
+    if (contentLayerStarted) return;
+    contentLayerStarted = true;
+    window.setTimeout(run, 600);
+    window.setTimeout(refreshContent, 2600);
+    window.setTimeout(refreshContent, 5200);
+    window.setTimeout(refreshContent, 8200);
+  };
   const start = () => {
-    window.setTimeout(run, 1800);
-    window.setTimeout(refreshContent, 4200);
-    window.setTimeout(refreshContent, 6800);
-    window.setTimeout(refreshContent, 10500);
+    const framerBundle = document.querySelector('script[data-framer-bundle="main"]');
+    const bundleEntry = framerBundle?.src ? window.performance?.getEntriesByName?.(framerBundle.src)?.[0] : null;
+    if (!framerBundle || bundleEntry?.responseEnd > 0) scheduleContentLayer();
+    else framerBundle.addEventListener('load', scheduleContentLayer, { once: true });
+    window.setTimeout(scheduleContentLayer, 8000);
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
   else start();
