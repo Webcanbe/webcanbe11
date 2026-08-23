@@ -51,6 +51,12 @@
     ["hello@create.com", "creator@webcanbe.com"],
     ["hello@createme.com", "creator@webcanbe.com"],
     ["Create Studio", "WebCanBe"],
+    ["LLC.", ""],
+    ["8 Sunset Blvd, Office 5", "크리에이터와 개인 브랜드"],
+    ["567 Sunset Blvd,", "크리에이터와 개인 브랜드"],
+    ["Suite 501", ""],
+    ["Los Angeles, CA 90026", "디지털 웹 스튜디오."],
+    ["(310) 555-0165", "creator@webcanbe.com"],
     ["Offline", "ABOUT"],
     ["Online", "EMAIL"],
     ["Phone", "INQUIRY"]
@@ -138,6 +144,7 @@
   const setLinks = () => {
     document.querySelectorAll('a[href*="contact"]').forEach((a) => a.href = "contact.html");
     document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
+    document.querySelectorAll('a[href^="tel:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href*="framerpod"], a[href*="framer.com"]').forEach((a) => {
       if (/template|more templates/i.test(a.textContent)) a.remove();
     });
