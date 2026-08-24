@@ -3,7 +3,8 @@
   gap: 8px !important;
 }
 
-.webcanbe-service-example {
+.webcanbe-service-example,
+.webcanbe-service-start {
   align-items: center;
   color: inherit;
   display: inline-flex;
@@ -17,11 +18,14 @@
   white-space: nowrap;
 }
 
-.webcanbe-service-example::after {
+.webcanbe-service-example::after,
+.webcanbe-service-start::after {
   content: "↗";
 }
 
 .webcanbe-service-example:hover,
-.webcanbe-service-example:focus-visible {
+.webcanbe-service-example:focus-visible,
+.webcanbe-service-start:hover,
+.webcanbe-service-start:focus-visible {
   color: rgb(255, 96, 65);
 }

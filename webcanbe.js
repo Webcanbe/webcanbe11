@@ -1183,8 +1183,10 @@
       ['assets/portfolio-vidora.jpg', 'VIDORA creator-business website example', '50% 50%'],
       ['assets/portfolio-mason-reed.png', 'Mason Reed personal-brand website example', '50% 28%'],
       ['assets/portfolio-maeve.jpg', 'MAEVE creator-brand and commerce website example', '50% 32%'],
-      ['assets/webcanbe-service-launch.webp', 'Editorial launch experience for a creator business', '50% 50%'],
-      ['assets/webcanbe-service-interaction.webp', 'Premium motion and interaction art direction', '50% 50%']
+      ['https://framerusercontent.com/images/0VDbrfao2M2kp6IWzpDkyyyEFYI.jpg?scale-down-to=512&width=1920&height=1920', 'THE SIGNAL independent publication example', '50% 50%'],
+      ['https://framerusercontent.com/images/1IZjMkHfxZEUwlavYO22U4cOE.png?scale-down-to=2048&width=4800&height=2976', 'OFF RECORD cinematic podcast example', '50% 50%'],
+      ['https://framerusercontent.com/images/Vb9zseAb0YK9TtzGRZQbW16Qro.png?scale-down-to=2048&width=5120&height=2881', 'THE CREATOR SYSTEM launch example', '50% 50%'],
+      ['https://framerusercontent.com/images/4ssprDQQhoDagf6Qy75EdLiUJmg.jpg?scale-down-to=2048&width=2464&height=1856', 'THE OPERATOR CLUB community example', '50% 50%']
     ];
     document.querySelectorAll('[data-framer-name="Section | Services"]').forEach((section) => {
       [...section.querySelectorAll('img')].forEach((image, index) => {
@@ -1194,12 +1196,6 @@
         image.removeAttribute('srcset');
         image.alt = asset[1];
         image.style.objectPosition = asset[2];
-      });
-      section.querySelectorAll('[data-framer-name*="Service 6"]').forEach((card) => {
-        const wrapper = card.parentElement || card;
-        wrapper.hidden = true;
-        wrapper.style.display = 'none';
-        wrapper.setAttribute('aria-hidden', 'true');
       });
     });
     replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="Abstract 3D composition of floating spheres and cubes in monochrome tones with soft lighting."]', 'assets/webcanbe-guide-content-structure.png', 'Structuring content for a creator website');
@@ -1677,74 +1673,46 @@
     };
 
     document.querySelectorAll('[data-framer-name="Section | Services"]').forEach((section) => {
-      setMatchingText(section, 'FOUNDATION', 'OWNED HOME');
-      setMatchingText(section, 'CREATOR COMMERCE EXPERIENCE', 'LAUNCH EXPERIENCE');
-      setMatchingText(section, 'INTERACTIVE WEBSITE WEBSITE', 'INTERACTIVE WEBSITE');
       const serviceExamples = [
-        {
-          category: 'CREATOR BUSINESS WEBSITE',
-          headline: 'CREATOR BUSINESS',
-          currentCategories: ['CREATOR WEBSITE'],
-          description: 'Content, audience, newsletter and partnership paths in one owned home.',
-          features: ['Content architecture', 'CMS and content hub', 'Newsletter integration', 'Partnership inquiry paths', 'Responsive development'],
-          project: 'VIDORA',
-          url: 'https://webcanbe-portfoliovidora.vercel.app/'
-        },
-        {
-          category: 'PERSONAL BRAND WEBSITE',
-          headline: 'PERSONAL BRAND',
-          currentCategories: ['PERSONAL BRAND'],
-          description: 'Expertise, content, products and services around one personal brand.',
-          features: ['Expertise and positioning', 'Content and resource structure', 'Courses, products and services', 'Advisory inquiry paths', 'Responsive development'],
-          project: 'MASON REED',
-          url: 'https://webcanbe-mason-reed.vercel.app/'
-        },
-        {
-          category: 'CREATOR BRAND / COMMERCE',
-          headline: 'CREATOR COMMERCE',
-          currentCategories: ['CREATOR COMMERCE'],
-          description: 'Editorial storytelling, campaigns and products for creator-owned brands.',
-          features: ['Editorial art direction', 'Campaign and collection stories', 'Product and commerce paths', 'Collaboration inquiries', 'Responsive development'],
-          project: 'MAEVE',
-          url: 'https://webcanbe-maeve.vercel.app/'
-        }
+        { category: 'CREATOR BUSINESS WEBSITE', headline: 'CREATOR BUSINESS', description: 'Content, audience, media and partnership paths in one owned home.', features: ['Content architecture', 'Media and content hub', 'Newsletter integration', 'Partnership inquiry paths', 'Responsive development'], project: 'VIDORA', url: 'https://webcanbe-portfoliovidora.vercel.app/', image: 'assets/portfolio-vidora.jpg', alt: 'VIDORA creator-business website example' },
+        { category: 'PERSONAL BRAND WEBSITE', headline: 'PERSONAL BRAND', description: 'Expertise, content, products and services built around one recognizable personal brand.', features: ['Expertise and positioning', 'Content and resource structure', 'Courses, products and services', 'Advisory inquiry paths', 'Responsive development'], project: 'MASON REED', url: 'https://webcanbe-mason-reed.vercel.app/', image: 'assets/portfolio-mason-reed.png', alt: 'MASON REED personal-brand website example' },
+        { category: 'CREATOR BRAND / COMMERCE', headline: 'CREATOR COMMERCE', description: 'Editorial storytelling, campaigns and products for creator-owned brands.', features: ['Editorial art direction', 'Campaign and collection stories', 'Product and commerce paths', 'Collaboration inquiries', 'Responsive development'], project: 'MAEVE', url: 'https://webcanbe-maeve.vercel.app/', image: 'assets/portfolio-maeve.jpg', alt: 'MAEVE creator-brand and commerce website example' },
+        { category: 'NEWSLETTER / MEDIA', headline: 'NEWSLETTER MEDIA', description: 'A publication, newsletter and content archive built into an owned media business.', features: ['Editorial system', 'Newsletter and archive', 'Topics and resources', 'Sponsorship paths', 'Responsive development'], project: 'THE SIGNAL', url: 'https://webcanbe-narric.vercel.app/', image: 'https://framerusercontent.com/images/0VDbrfao2M2kp6IWzpDkyyyEFYI.jpg?scale-down-to=512&width=1920&height=1920', alt: 'THE SIGNAL publication example' },
+        { category: 'PODCAST / MEDIA', headline: 'PODCAST MEDIA', description: 'Episodes, guests, stories, partnerships and audience relationships in one media home.', features: ['Episode library', 'Guest and story pages', 'Audience subscriptions', 'Partnership inquiry paths', 'Responsive development'], project: 'OFF RECORD', url: 'https://webcanbe-lisyn.vercel.app/', image: 'https://framerusercontent.com/images/1IZjMkHfxZEUwlavYO22U4cOE.png?scale-down-to=2048&width=4800&height=2976', alt: 'OFF RECORD cinematic podcast example' },
+        { category: 'LAUNCH EXPERIENCE', headline: 'LAUNCH EXPERIENCE', description: 'A focused launch experience for courses, programs, products and major creator offers.', features: ['Launch narrative', 'Offer and program flow', 'Conversion paths', 'Platform integrations', 'Launch handoff'], project: 'THE CREATOR SYSTEM', url: 'https://webcanbe-skillfunnel.vercel.app/', image: 'https://framerusercontent.com/images/Vb9zseAb0YK9TtzGRZQbW16Qro.png?scale-down-to=2048&width=5120&height=2881', alt: 'THE CREATOR SYSTEM launch example' },
+        { category: 'MEMBERSHIP / COMMUNITY', headline: 'MEMBERSHIP COMMUNITY', description: 'A premium home for private membership, community, resources and applications.', features: ['Membership positioning', 'Resources and member flows', 'Application path', 'Private community system', 'Responsive development'], project: 'THE OPERATOR CLUB', url: 'https://webcanbe-theboard.vercel.app/', image: 'https://framerusercontent.com/images/4ssprDQQhoDagf6Qy75EdLiUJmg.jpg?scale-down-to=2048&width=2464&height=1856', alt: 'THE OPERATOR CLUB community example' }
       ];
-      serviceExamples.forEach((example, index) => {
-        section.querySelectorAll(`[data-framer-name$="Service ${index + 1}"]`).forEach((card) => {
-          example.currentCategories.forEach((category) => {
-            setMatchingText(card, category, example.category);
-            setMatchingText(card, category, example.category);
-          });
-          const largeCategory = [...card.querySelectorAll('h1, h2, h3, h4, h5, h6, p')]
-            .find((element) => {
-              const normalized = (element.textContent || '').replace(/\s+/g, ' ').trim();
-              return normalized === example.category && Number.parseFloat(getComputedStyle(element).fontSize) > 24;
-            });
-          setText(largeCategory, example.headline);
-          const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
-          if (description) {
-            setText(description.querySelector('p'), example.description);
-            description.classList.add('webcanbe-service-description-with-example');
-            let link = description.querySelector('.webcanbe-service-example');
-            if (!link) {
-              link = document.createElement('a');
-              link.className = 'webcanbe-service-example';
-              link.textContent = 'VIEW EXAMPLE';
-              description.appendChild(link);
-            }
-            link.href = example.url;
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.setAttribute('aria-label', `View the ${example.project} live website example in a new tab`);
-          }
-          const right = [...card.querySelectorAll('[data-framer-name="Right"]')].find((element) => element.querySelectorAll('p').length >= example.features.length);
-          if (right) {
-            [...right.querySelectorAll('p')]
-              .filter((label) => label.textContent.replace(/\s+/g, ' ').trim() !== '+')
-              .slice(0, example.features.length)
-              .forEach((label, featureIndex) => setText(label, example.features[featureIndex]));
-          }
-        });
+      let cards = [...section.querySelectorAll('[data-framer-name^="Desktop - Service "]')]
+        .sort((a, b) => Number(a.getAttribute('data-framer-name').match(/(\d+)$/)?.[1]) - Number(b.getAttribute('data-framer-name').match(/(\d+)$/)?.[1]));
+      if (cards.length === 6) {
+        const source = cards[5];
+        const clone = source.cloneNode(true);
+        clone.setAttribute('data-framer-name', 'Desktop - Service 7');
+        clone.dataset.webcanbeServiceClone = 'true';
+        source.parentElement?.appendChild(clone);
+        cards = [...cards, clone];
+      }
+      cards.slice(0, serviceExamples.length).forEach((card, index) => {
+        const example = serviceExamples[index];
+        const labels = [...card.querySelectorAll('p')].filter((label) => label.textContent.replace(/\s+/g, ' ').trim());
+        setText(labels[0], example.category);
+        setText(labels[1], '/0');
+        setText(labels[2], String(index + 1));
+        setText(labels[3], example.headline);
+        setText(labels[4], example.description);
+        if (index >= 3) labels[3].style.fontSize = 'clamp(54px, 7.8vw, 94px)';
+        card.querySelectorAll('img').forEach((image) => { image.src = example.image; image.removeAttribute('srcset'); image.alt = example.alt; image.style.objectPosition = '50% 50%'; });
+        const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
+        if (description) {
+          description.classList.add('webcanbe-service-description-with-example');
+          let exampleLink = description.querySelector('.webcanbe-service-example');
+          if (!exampleLink) { exampleLink = document.createElement('a'); exampleLink.className = 'webcanbe-service-example'; description.appendChild(exampleLink); }
+          exampleLink.textContent = 'VIEW EXAMPLE'; exampleLink.href = example.url; exampleLink.target = '_blank'; exampleLink.rel = 'noopener noreferrer'; exampleLink.setAttribute('aria-label', `View the ${example.project} live website example in a new tab`);
+          let startLink = description.querySelector('.webcanbe-service-start');
+          if (!startLink) { startLink = document.createElement('a'); startLink.className = 'webcanbe-service-start'; description.appendChild(startLink); }
+          startLink.textContent = 'START A PROJECT'; startLink.href = 'contact.html'; startLink.setAttribute('aria-label', 'Start a WebCanBe project');
+        }
+        [6, 8, 10, 12, 14].forEach((labelIndex, featureIndex) => setText(labels[labelIndex], example.features[featureIndex]));
       });
     });
     document.querySelectorAll('[data-framer-name^="Benefit Card 02"], [data-framer-name="Benefit Card 04 -Phone"]').forEach((card) => {
