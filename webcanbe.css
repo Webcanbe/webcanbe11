@@ -1,1 +1,27 @@
-/* Intentionally empty: WebCanBe reuses the unmodified Create visual system. */
+/* WebCanBe reuses the Create visual system; this only styles service-example links. */
+.webcanbe-service-description-with-example {
+  gap: 8px !important;
+}
+
+.webcanbe-service-example {
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  font-family: "Fragment Mono", monospace;
+  font-size: 12px;
+  gap: 8px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.webcanbe-service-example::after {
+  content: "↗";
+}
+
+.webcanbe-service-example:hover,
+.webcanbe-service-example:focus-visible {
+  color: rgb(255, 96, 65);
+}

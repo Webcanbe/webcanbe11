@@ -489,7 +489,7 @@
     ["맞춤 제작", "CUSTOM BY DEFAULT"],
     ["첫 단계부터.", "FROM DAY ONE"],
     ["시작은 분명하게", "Projects start at $2,500."],
-    ["필요한 범위와 다음 단계를 한눈에 비교하세요.", "Most creator-business websites fall between $3,500 and $5,000, depending on scope."],
+    ["필요한 범위와 다음 단계를 한눈에 비교하세요.", "Most creator-business websites are $3,500–$5,000, depending on scope."],
     ["빠르게 시작하는 공식 사이트", "A focused home for your brand."],
     ["브랜드 전체를 설계하는 맞춤 제작", "Built around the business behind the audience."],
     ["콘텐츠와 판매를 확장하는 사이트", "Content, commerce and custom integrations."],
@@ -506,7 +506,7 @@
     ["공식 브랜드 공간", "OWNED BRAND HOME"],
     ["언제든 열리는 채널", "ALWAYS-ON DESTINATION"],
     ["시작은 분명하게", "Projects start at $2,500."],
-    ["필요한 페이지와 기능을 확인한 뒤, 맞는 제작 범위와 비용을 안내합니다.", "Most creator-business websites fall between $3,500 and $5,000, depending on scope."],
+    ["필요한 페이지와 기능을 확인한 뒤, 맞는 제작 범위와 비용을 안내합니다.", "Most creator-business websites are $3,500–$5,000, depending on scope."],
     ["상담 후", "CUSTOM"],
     ["/프로젝트", "/PROJECT"],
     ["기존", "SCOPE"],
@@ -917,7 +917,7 @@
   const setMeta = () => {
     document.documentElement.lang = "en";
     document.title = "WebCanBe — Premium Websites for Creator-Led Businesses";
-    const description = "WebCanBe designs and builds premium websites for creator-led businesses—bringing content, products, newsletters, partnerships and services into one owned digital home.";
+    const description = "WebCanBe designs and builds premium websites for educators, experts, creators and personal brands whose audience has become a business.";
     document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach((el) => el.content = description);
     document.querySelectorAll('meta[property="og:title"], meta[name="twitter:title"]').forEach((el) => el.content = document.title);
     document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach((el) => {
@@ -954,12 +954,7 @@
     document.querySelectorAll('a[href*="contact"]').forEach((a) => a.href = "contact.html");
     document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href^="tel:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
-    document.querySelectorAll('a[href*="dub.sh/create"], a[href*="framerpod"], a[href*="tamasbodo"], a[href*="linkedin.com"], a[href*="whatsapp.com"], a[href*="glassdoor.com"]').forEach((a) => a.href = "contact.html");
-    document.querySelectorAll('a[href*="instagram.com"], a[href*="facebook.com"], a[href*="threads.com"]').forEach((a) => {
-      a.removeAttribute('href');
-      a.removeAttribute('target');
-      a.setAttribute('aria-hidden', 'true');
-    });
+    document.querySelectorAll('a[href*="dub.sh/create"], a[href*="framerpod"], a[href*="tamasbodo"], a[href*="linkedin.com"], a[href*="whatsapp.com"], a[href*="glassdoor.com"], a[href*="instagram.com"], a[href*="facebook.com"], a[href*="threads.com"], a[href*="x.com/"]').forEach((a) => a.remove());
     document.querySelectorAll('a[href*="framerpod"], a[href*="framer.com"]').forEach((a) => {
       if (/template|more templates/i.test(a.textContent)) a.remove();
     });
@@ -1095,22 +1090,34 @@
     });
     const showcaseProjects = [
       {
-        name: 'FACELESS',
-        category: 'FASHION · COMMERCE',
-        details: 'An editorial commerce experience\nwhere visual identity and product\nlive in the same world\nCREATOR-LED COMMERCE\nLIVE SITE',
-        mobileDetails: 'EDITORIAL\nCOLLECTION\nCOMMERCE',
-        image: 'assets/portfolio-faceless.png',
-        alt: 'FACELESS editorial fashion-commerce website',
-        url: 'https://webcanbe-portfoliofacelessdrop.vercel.app/'
+        name: 'MASON REED',
+        category: 'CREATOR · EDUCATION',
+        details: "An owned digital home\nfor an educator's content, course,\nresources and expertise\nKNOWLEDGE BUSINESS\nLIVE SITE",
+        mobileDetails: 'EDUCATION\nRESOURCES\nADVISORY',
+        image: 'assets/portfolio-mason-reed.png',
+        alt: 'Mason Reed educator and personal-brand website',
+        objectPosition: '50% 28%',
+        url: 'https://webcanbe-mason-reed.vercel.app/'
       },
       {
         name: 'VIDORA',
         category: 'CREATOR · YOUTUBE',
-        details: 'A content-first home built\nfor a creator brand that goes\nbeyond a single channel\nCREATOR MEDIA\nLIVE SITE',
+        details: 'A content-first home built\nbeyond the feed\nVIDEO · MEDIA · PARTNERSHIPS\nCREATOR MEDIA\nLIVE SITE',
         mobileDetails: 'CONTENT\nCHANNEL\nINQUIRY',
         image: 'assets/portfolio-vidora.jpg',
         alt: 'VIDORA creator and YouTube channel website',
+        objectPosition: '50% 50%',
         url: 'https://webcanbe-portfoliovidora.vercel.app/'
+      },
+      {
+        name: 'MAEVE',
+        category: 'FASHION · CREATOR BRAND',
+        details: 'An editorial home\nfor a creator evolving\ninto a brand\nCAMPAIGNS · COLLECTIONS\nLIVE SITE',
+        mobileDetails: 'EDITORIAL\nCAMPAIGNS\nCOLLECTIONS',
+        image: 'assets/portfolio-maeve.jpg',
+        alt: 'MAEVE fashion creator-brand website',
+        objectPosition: '50% 32%',
+        url: 'https://webcanbe-maeve.vercel.app/'
       }
     ];
     const showcaseLinks = [...document.querySelectorAll('[data-framer-name="Section | Featured Projects"] a[data-framer-name="Image"]')];
@@ -1126,11 +1133,17 @@
         return;
       }
       const card = link.parentElement;
+      if (card) {
+        card.hidden = false;
+        card.style.removeProperty('display');
+        card.removeAttribute('aria-hidden');
+      }
       const image = link.querySelector('img');
       if (image) {
         image.src = project.image;
         image.removeAttribute('srcset');
         image.alt = project.alt;
+        image.style.objectPosition = project.objectPosition;
       }
       const labels = card ? [...card.querySelectorAll('p')] : [];
       if (labels[0]) labels[0].textContent = project.name;
@@ -1167,11 +1180,11 @@
     replaceImage('[data-framer-name="Section | How we work"] img[alt^="Abstract dark background"]', 'assets/webcanbe-process-storyboard.png', 'WebCanBe creator-website strategy and storyboard process');
     replaceImage('[data-framer-name="Section | How we work"] img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-process-detail.png', 'Responsive personal-brand website prototype review');
     const serviceImages = [
-      ['assets/webcanbe-service-owned-home.webp', 'An owned digital home for a creator-led business'],
-      ['assets/webcanbe-service-personal-brand.webp', 'Editorial portrait for a premium personal-brand website'],
-      ['assets/webcanbe-service-creator-commerce.webp', 'Creator-owned commerce brand art direction'],
-      ['assets/webcanbe-service-launch.webp', 'Editorial launch experience for a creator business'],
-      ['assets/webcanbe-service-interaction.webp', 'Premium motion and interaction art direction']
+      ['assets/portfolio-vidora.jpg', 'VIDORA creator-business website example', '50% 50%'],
+      ['assets/portfolio-mason-reed.png', 'Mason Reed personal-brand website example', '50% 28%'],
+      ['assets/portfolio-maeve.jpg', 'MAEVE creator-brand and commerce website example', '50% 32%'],
+      ['assets/webcanbe-service-launch.webp', 'Editorial launch experience for a creator business', '50% 50%'],
+      ['assets/webcanbe-service-interaction.webp', 'Premium motion and interaction art direction', '50% 50%']
     ];
     document.querySelectorAll('[data-framer-name="Section | Services"]').forEach((section) => {
       [...section.querySelectorAll('img')].forEach((image, index) => {
@@ -1180,6 +1193,7 @@
         image.src = asset[0];
         image.removeAttribute('srcset');
         image.alt = asset[1];
+        image.style.objectPosition = asset[2];
       });
       section.querySelectorAll('[data-framer-name*="Service 6"]').forEach((card) => {
         const wrapper = card.parentElement || card;
@@ -1202,13 +1216,14 @@
     replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-option-custom.png', 'CUSTOM personal-brand website scope');
     replaceImage('[data-framer-name="Section | Pricing"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-option-expand.png', 'EXPAND creator-commerce website scope');
     replaceImage('[data-framer-name="Section | Book a Call"] img[alt^="Man with short hair and beard"]', 'assets/webcanbe-contact-creator.png', 'Creator preparing a personal-brand website project');
-    replaceImage('[data-framer-name="Section | Testimonial"] img[alt^="Smiling man wearing glasses and a grey shirt"]', 'assets/webcanbe-perspective-art-direction.webp', 'Fashion-commerce art direction behind the FACELESS project');
-    replaceImage('[data-framer-name="Section | Testimonial"] [data-framer-name="Avatar"] img', 'assets/webcanbe-perspective-art-direction.webp', 'Fashion-commerce art direction behind the FACELESS project');
+    replaceImage('[data-framer-name="Section | Testimonial"] img[alt^="Smiling man wearing glasses and a grey shirt"]', 'assets/portfolio-maeve.jpg', 'Fashion and editorial art direction behind the MAEVE project');
+    replaceImage('[data-framer-name="Section | Testimonial"] [data-framer-name="Avatar"] img', 'assets/portfolio-maeve.jpg', 'Fashion and editorial art direction behind the MAEVE project');
     document.querySelectorAll('[data-framer-name="Section | Testimonial"] img').forEach((image) => {
       if (image.closest('[data-framer-name="Logo Mark"]')) return;
-      image.src = 'assets/webcanbe-perspective-art-direction.webp';
+      image.src = 'assets/portfolio-maeve.jpg';
       image.removeAttribute('srcset');
-      image.alt = 'Fashion-commerce art direction behind the FACELESS project';
+      image.alt = 'Fashion and editorial art direction behind the MAEVE project';
+      image.style.objectPosition = '50% 32%';
     });
     const perspectiveCopy = new Map([
       ['채널 운영 방식과 제공 서비스를 첫 화면에서 바로 이해할 수 있도록 정보 순서를 설계했습니다.', 'The opening frame establishes the collection before asking the audience to shop.'],
@@ -1222,10 +1237,10 @@
       const value = label.textContent.replace(/\s+/g, ' ').trim();
       const perspective = perspectiveCopy.get(value);
       if (perspective) label.textContent = perspective;
-      else if (/^(VIDORA|BASELINE)$/i.test(value)) label.textContent = 'FACELESS';
+      else if (/^(VIDORA|BASELINE|FACELESS)$/i.test(value)) label.textContent = 'MAEVE';
       else if (/^(CREATOR · CHANNEL GROWTH|SPORTS · ACADEMY)$/i.test(value)) label.textContent = 'FASHION · EDITORIAL';
       else if (/Backed by feedback from/i.test(value)) label.textContent = 'A closer look at the decisions shaping the live experience.';
-      else if (/^(Rachel Morgan|Edward Bright|WEBCANBE)$/i.test(value)) label.textContent = 'FACELESS';
+      else if (/^(Rachel Morgan|Edward Bright|WEBCANBE)$/i.test(value)) label.textContent = 'MAEVE';
       else if (/^(콘텐츠 구조|INTERACTION)$/i.test(value)) label.textContent = 'FASHION · EDITORIAL';
       else if (value === '오픈 이후') label.textContent = 'PROJECT PERSPECTIVE';
     });
@@ -1285,7 +1300,7 @@
       link.removeAttribute('rel');
       link.setAttribute('aria-label', 'Return to the start of selected work');
     });
-    const showcaseMetrics = ['02', '02', '01', '24/7'];
+    const showcaseMetrics = ['03', '03', '01', '24/7'];
     document.querySelectorAll('[data-framer-name="Section | Statistics"] number-flow-react').forEach((counter, index) => {
       const value = showcaseMetrics[index % showcaseMetrics.length];
       const metric = document.createElement('span');
@@ -1665,6 +1680,72 @@
       setMatchingText(section, 'FOUNDATION', 'OWNED HOME');
       setMatchingText(section, 'CREATOR COMMERCE EXPERIENCE', 'LAUNCH EXPERIENCE');
       setMatchingText(section, 'INTERACTIVE WEBSITE WEBSITE', 'INTERACTIVE WEBSITE');
+      const serviceExamples = [
+        {
+          category: 'CREATOR BUSINESS WEBSITE',
+          headline: 'CREATOR BUSINESS',
+          currentCategories: ['CREATOR WEBSITE'],
+          description: 'Content, audience, newsletter and partnership paths in one owned home.',
+          features: ['Content architecture', 'CMS and content hub', 'Newsletter integration', 'Partnership inquiry paths', 'Responsive development'],
+          project: 'VIDORA',
+          url: 'https://webcanbe-portfoliovidora.vercel.app/'
+        },
+        {
+          category: 'PERSONAL BRAND WEBSITE',
+          headline: 'PERSONAL BRAND',
+          currentCategories: ['PERSONAL BRAND'],
+          description: 'Expertise, content, products and services around one personal brand.',
+          features: ['Expertise and positioning', 'Content and resource structure', 'Courses, products and services', 'Advisory inquiry paths', 'Responsive development'],
+          project: 'MASON REED',
+          url: 'https://webcanbe-mason-reed.vercel.app/'
+        },
+        {
+          category: 'CREATOR BRAND / COMMERCE',
+          headline: 'CREATOR COMMERCE',
+          currentCategories: ['CREATOR COMMERCE'],
+          description: 'Editorial storytelling, campaigns and products for creator-owned brands.',
+          features: ['Editorial art direction', 'Campaign and collection stories', 'Product and commerce paths', 'Collaboration inquiries', 'Responsive development'],
+          project: 'MAEVE',
+          url: 'https://webcanbe-maeve.vercel.app/'
+        }
+      ];
+      serviceExamples.forEach((example, index) => {
+        section.querySelectorAll(`[data-framer-name$="Service ${index + 1}"]`).forEach((card) => {
+          example.currentCategories.forEach((category) => {
+            setMatchingText(card, category, example.category);
+            setMatchingText(card, category, example.category);
+          });
+          const largeCategory = [...card.querySelectorAll('h1, h2, h3, h4, h5, h6, p')]
+            .find((element) => {
+              const normalized = (element.textContent || '').replace(/\s+/g, ' ').trim();
+              return normalized === example.category && Number.parseFloat(getComputedStyle(element).fontSize) > 24;
+            });
+          setText(largeCategory, example.headline);
+          const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
+          if (description) {
+            setText(description.querySelector('p'), example.description);
+            description.classList.add('webcanbe-service-description-with-example');
+            let link = description.querySelector('.webcanbe-service-example');
+            if (!link) {
+              link = document.createElement('a');
+              link.className = 'webcanbe-service-example';
+              link.textContent = 'VIEW EXAMPLE';
+              description.appendChild(link);
+            }
+            link.href = example.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.setAttribute('aria-label', `View the ${example.project} live website example in a new tab`);
+          }
+          const right = [...card.querySelectorAll('[data-framer-name="Right"]')].find((element) => element.querySelectorAll('p').length >= example.features.length);
+          if (right) {
+            [...right.querySelectorAll('p')]
+              .filter((label) => label.textContent.replace(/\s+/g, ' ').trim() !== '+')
+              .slice(0, example.features.length)
+              .forEach((label, featureIndex) => setText(label, example.features[featureIndex]));
+          }
+        });
+      });
     });
     document.querySelectorAll('[data-framer-name^="Benefit Card 02"], [data-framer-name="Benefit Card 04 -Phone"]').forEach((card) => {
       setMatchingText(card, 'BUILT AROUND YOU', 'BUILT FOR YOU');
@@ -1737,7 +1818,7 @@
 
     const faqCopy = [
       ['Who do you work with?', 'Educators, experts, consultants, authors and independent businesses built around an audience.'],
-      ['How much does a project cost?', 'Projects start at $2,500. Most creator-business websites fall between $3,500 and $5,000, depending on scope.'],
+      ['How much does a project cost?', 'Projects start at $2,500. Most creator-business websites are $3,500–$5,000, depending on scope.'],
       ['Do I need to schedule calls?', 'No. Projects can run entirely through email, shared documents and visual feedback. The workflow is built for clear written decisions, not recurring meetings.'],
       ['Can you redesign an existing creator website?', 'Yes. We keep what works, rethink what does not and rebuild around the business you operate today.'],
       ['Can you connect newsletters, courses and stores?', 'Yes. We can connect the platforms you already use for publishing, email, courses, products and payments.'],
