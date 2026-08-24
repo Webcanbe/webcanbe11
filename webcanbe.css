@@ -55,5 +55,48 @@
 
 .webcanbe-footer-contact-list > p {
   align-self: flex-start;
-  margin: 0;
+  margin: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+.webcanbe-footer-projects {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.webcanbe-footer-projects-title {
+  color: var(--token-fbea26c7-8757-4c66-adde-b08e26f9e38c, rgb(92, 96, 99));
+  font-family: "Fragment Mono", monospace;
+  font-size: 12px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.webcanbe-footer-projects-links {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.webcanbe-footer-projects-links a {
+  color: inherit;
+  font-family: "Fragment Mono", monospace;
+  font-size: 12px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.webcanbe-footer-projects-links a::after {
+  content: " ↗";
+}
+
+.webcanbe-footer-projects-links a:hover,
+.webcanbe-footer-projects-links a:focus-visible {
+  color: rgb(255, 96, 65);
 }

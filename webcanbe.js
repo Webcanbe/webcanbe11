@@ -1954,9 +1954,42 @@
         });
       }
       if (projectsContact) {
-        projectsContact.hidden = true;
-        projectsContact.style.display = 'none';
-        projectsContact.setAttribute('aria-hidden', 'true');
+        const footerProjects = [
+          ['MASON REED', 'https://webcanbe-mason-reed.vercel.app/'],
+          ['VIDORA', 'https://webcanbe-portfoliovidora.vercel.app/'],
+          ['MAEVE', 'https://webcanbe-maeve.vercel.app/'],
+          ['THE SIGNAL', 'https://webcanbe-narric.vercel.app/'],
+          ['OFF RECORD', 'https://webcanbe-lisyn.vercel.app/'],
+          ['THE CREATOR SYSTEM', 'https://webcanbe-skillfunnel.vercel.app/'],
+          ['THE OPERATOR CLUB', 'https://webcanbe-theboard.vercel.app/']
+        ];
+        projectsContact.hidden = false;
+        projectsContact.style.display = 'block';
+        projectsContact.removeAttribute('aria-hidden');
+        projectsContact.querySelectorAll(':scope > :not(.webcanbe-footer-projects)').forEach((element) => {
+          element.setAttribute('aria-hidden', 'true');
+          element.style.display = 'none';
+        });
+        let projectList = projectsContact.querySelector('.webcanbe-footer-projects');
+        if (!projectList) {
+          projectList = document.createElement('section');
+          projectList.className = 'webcanbe-footer-projects';
+          projectList.setAttribute('aria-label', 'WebCanBe projects');
+          projectList.innerHTML = '<span class="webcanbe-footer-projects-title">PROJECTS</span><div class="webcanbe-footer-projects-links"></div>';
+          projectsContact.appendChild(projectList);
+        }
+        const projectLinks = projectList.querySelector('.webcanbe-footer-projects-links');
+        if (projectLinks) {
+          projectLinks.replaceChildren(...footerProjects.map(([name, url]) => {
+            const link = document.createElement('a');
+            link.textContent = name;
+            link.href = url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.setAttribute('aria-label', `Visit ${name} project in a new tab`);
+            return link;
+          }));
+        }
       }
     });
     document.querySelectorAll('a[data-framer-name="Navigation"]').forEach((link) => {
