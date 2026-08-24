@@ -1912,12 +1912,12 @@
         if (/^Content, products, partnerships and audience/.test(label.textContent.trim())) setText(label, 'Premium websites for creator-led businesses.');
       });
       const generalContact = [...footer.querySelectorAll('[data-framer-name="Email"]')]
-        .find((block) => [...block.querySelectorAll('p')].some((label) => label.textContent.trim() === 'EMAIL') && block.querySelector('a[href^="mailto:"]'));
+        .find((block) => [...block.querySelectorAll('p')].some((label) => /^(?:EMAIL|GENERAL)$/.test(label.textContent.trim())) && block.querySelector('a[href^="mailto:"]'));
       const projectsContact = [...footer.querySelectorAll('[data-framer-name="Online"]')]
-        .find((block) => block.querySelector('a[href^="mailto:"]'));
+        .find((block) => /^(?:INQUIRY|PROJECTS)$/.test([...block.querySelectorAll('p')].map((label) => label.textContent.trim()).find(Boolean) || '') && block.querySelector('a[href^="mailto:"]'));
       if (generalContact) {
         generalContact.querySelectorAll('p').forEach((label) => {
-          if (label.textContent.trim() === 'EMAIL') setText(label, 'GENERAL');
+          if (/^(?:EMAIL|GENERAL)$/.test(label.textContent.trim())) setText(label, 'GENERAL');
         });
         const generalLink = generalContact.querySelector('a[href^="mailto:"]');
         if (generalLink) {
@@ -1941,7 +1941,7 @@
       }
       if (projectsContact) {
         projectsContact.querySelectorAll('p').forEach((label) => {
-          if (label.textContent.trim() === 'INQUIRY') setText(label, 'PROJECTS');
+          if (/^(?:INQUIRY|PROJECTS)$/.test(label.textContent.trim())) setText(label, 'PROJECTS');
         });
         const projectLink = projectsContact.querySelector('a[href^="mailto:"]');
         if (projectLink) {
