@@ -1449,6 +1449,29 @@
       if (paragraphs.length) paragraphs.forEach((paragraph) => paragraph.textContent = label);
       else button.textContent = label;
     };
+    const submissionFingerprint = (fields) => [fields.name.value, fields.email.value, fields.type.value, fields.message.value]
+      .map((value) => value.trim().toLowerCase()).join('|');
+    const submissionKey = (liveForm) => {
+      if (!liveForm.dataset.webcanbeSubmissionKey) {
+        liveForm.dataset.webcanbeSubmissionKey = window.crypto?.randomUUID?.()
+          || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+      }
+      return liveForm.dataset.webcanbeSubmissionKey;
+    };
+    const wasRecentlySubmitted = (fields) => {
+      try {
+        return window.sessionStorage.getItem(`webcanbe-contact:${submissionFingerprint(fields)}`) === 'sent';
+      } catch (error) {
+        return false;
+      }
+    };
+    const rememberSubmission = (fields) => {
+      try {
+        window.sessionStorage.setItem(`webcanbe-contact:${submissionFingerprint(fields)}`, 'sent');
+      } catch (error) {
+        // Server-side idempotency still protects against duplicate sends.
+      }
+    };
     if (document.documentElement.dataset.webcanbeContactDelegate !== 'true') {
       document.documentElement.dataset.webcanbeContactDelegate = 'true';
       const submitContact = async (event, liveForm, submitButton) => {
@@ -1459,7 +1482,8 @@
         const email = liveForm.querySelector('input[name="email"]');
         const type = liveForm.querySelector('select[name="siteType"]');
         const message = liveForm.querySelector('textarea[name="message"]');
-        if (!name || !company || !email || !type || !message || !submitButton) return;
+        if (!name || !company || !email || !type || !message || !submitButton || liveForm.dataset.webcanbeContactSending === 'true') return;
+        const fields = { name, company, email, type, message };
         const validations = [
           [name, 'Please enter your name.', !name.value.trim()],
           [email, 'Please enter a valid email address.', !/^\S+@\S+\.\S+$/.test(email.value.trim())],
@@ -1468,18 +1492,27 @@
         ];
         validations.forEach(([field, validationMessage, invalid]) => field.setCustomValidity(invalid ? validationMessage : ''));
         if (!liveForm.reportValidity()) return;
+        if (wasRecentlySubmitted(fields)) {
+          submitButton.disabled = true;
+          setButtonLabel(submitButton, 'PROJECT INQUIRY SENT');
+          return;
+        }
+        liveForm.dataset.webcanbeContactSending = 'true';
         submitButton.disabled = true;
         setButtonLabel(submitButton, 'SENDING…');
         try {
           const response = await fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: name.value, email: email.value, social: company.value, siteType: type.value, message: message.value })
+            body: JSON.stringify({ name: name.value, email: email.value, social: company.value, siteType: type.value, message: message.value, idempotencyKey: submissionKey(liveForm) })
           });
           if (!response.ok) throw new Error('Unable to send the inquiry.');
+          rememberSubmission(fields);
           liveForm.reset();
+          delete liveForm.dataset.webcanbeSubmissionKey;
           setButtonLabel(submitButton, 'PROJECT INQUIRY SENT');
         } catch (error) {
+          delete liveForm.dataset.webcanbeContactSending;
           submitButton.disabled = false;
           setButtonLabel(submitButton, 'SEND FAILED — EMAIL US INSTEAD');
         }
@@ -1603,14 +1636,18 @@
             email: fields.email.value,
             social: fields.company.value,
             siteType: fields.type.value,
-            message: fields.message.value
+            message: fields.message.value,
+            idempotencyKey: submissionKey(form)
           })
         });
         if (!response.ok) throw new Error('Unable to send the inquiry.');
+        rememberSubmission(fields);
         form.reset();
+        delete form.dataset.webcanbeSubmissionKey;
         configureFields();
         if (submit) setButtonLabel(submit, 'PROJECT INQUIRY SENT');
       } catch (error) {
+        delete form.dataset.webcanbeContactSending;
         if (submit) { submit.disabled = false; setButtonLabel(submit, 'SEND FAILED — EMAIL US INSTEAD'); }
       }
     };
