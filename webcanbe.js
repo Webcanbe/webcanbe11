@@ -1702,6 +1702,16 @@
         setText(labels[3], example.headline);
         setText(labels[4], example.description);
         if (index >= 3) labels[3].style.fontSize = variant === 'Phone' ? 'clamp(36px, 12vw, 54px)' : 'clamp(54px, 7.8vw, 94px)';
+        if (variant === 'Phone') {
+          setText(card.querySelector('[data-framer-name="Header"] h1, [data-framer-name="Header"] h2, [data-framer-name="Header"] h3, [data-framer-name="Header"] h4, [data-framer-name="Header"] h5, [data-framer-name="Header"] h6'), example.headline);
+          const right = [...card.querySelectorAll('[data-framer-name="Right"]')].find((element) => element.querySelectorAll('p').length >= 6);
+          if (right) {
+            const phoneLabels = [...right.querySelectorAll('p')];
+            setText(phoneLabels[0], example.description);
+            const phoneFeatures = [...example.features, 'Custom project structure', 'Content and conversion paths', 'Built for every screen', 'Launch-ready handoff', 'Ongoing support when scoped'];
+            phoneLabels.slice(1).forEach((label, featureIndex) => setText(label, phoneFeatures[featureIndex]));
+          }
+        }
         card.querySelectorAll('img').forEach((image) => { image.src = example.image; image.removeAttribute('srcset'); image.alt = example.alt; image.style.objectPosition = '50% 50%'; });
         const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
         if (description) {
