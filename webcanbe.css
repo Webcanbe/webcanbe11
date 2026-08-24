@@ -42,35 +42,10 @@
   overflow: visible !important;
 }
 
-/* Extends the existing footer contact column without changing its grid. */
-.webcanbe-footer-ceo-contact {
-  align-items: flex-start;
+/* Reuses the existing hello@ link treatment for every footer contact. */
+.webcanbe-footer-contact-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-top: 14px;
-}
-
-.webcanbe-footer-ceo-contact span,
-.webcanbe-footer-ceo-contact a {
-  font-family: "Fragment Mono", monospace;
-  letter-spacing: -0.03em;
-  line-height: 1.25;
-}
-
-.webcanbe-footer-ceo-contact span {
-  color: var(--token-fbea26c7-8757-4c66-adde-b08e26f9e38c, rgb(92, 96, 99));
-  font-size: 11px;
-}
-
-.webcanbe-footer-ceo-contact a {
-  color: inherit;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.webcanbe-footer-ceo-contact a:hover,
-.webcanbe-footer-ceo-contact a:focus-visible {
-  color: rgb(255, 96, 65);
+  gap: 10px;
+  margin-top: 10px;
 }

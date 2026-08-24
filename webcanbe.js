@@ -1912,44 +1912,51 @@
         if (/^Content, products, partnerships and audience/.test(label.textContent.trim())) setText(label, 'Premium websites for creator-led businesses.');
       });
       const generalContact = [...footer.querySelectorAll('[data-framer-name="Email"]')]
-        .find((block) => [...block.querySelectorAll('p')].some((label) => /^(?:EMAIL|GENERAL)$/.test(label.textContent.trim())) && block.querySelector('a[href^="mailto:"]'));
+        .find((block) => [...block.querySelectorAll('p')].some((label) => /^(?:EMAIL|GENERAL|CONTACT)$/.test(label.textContent.trim())) && block.querySelector('a[href^="mailto:"]'));
       const projectsContact = [...footer.querySelectorAll('[data-framer-name="Online"]')]
         .find((block) => /^(?:INQUIRY|PROJECTS)$/.test([...block.querySelectorAll('p')].map((label) => label.textContent.trim()).find(Boolean) || '') && block.querySelector('a[href^="mailto:"]'));
       if (generalContact) {
         generalContact.querySelectorAll('p').forEach((label) => {
-          if (/^(?:EMAIL|GENERAL)$/.test(label.textContent.trim())) setText(label, 'GENERAL');
+          if (/^(?:EMAIL|GENERAL|CONTACT)$/.test(label.textContent.trim())) setText(label, 'CONTACT');
         });
         const generalLink = generalContact.querySelector('a[href^="mailto:"]');
         if (generalLink) {
           generalLink.textContent = 'hello@webcanbe.com';
           generalLink.href = 'mailto:hello@webcanbe.com';
           generalLink.removeAttribute('target');
-          generalLink.setAttribute('aria-label', 'Email WebCanBe general contact');
+          generalLink.setAttribute('aria-label', 'Email WebCanBe contact');
         }
-        let ceoContact = generalContact.querySelector('.webcanbe-footer-ceo-contact');
-        if (!ceoContact) {
-          ceoContact = document.createElement('div');
-          ceoContact.className = 'webcanbe-footer-ceo-contact';
-          ceoContact.innerHTML = '<span>CEO</span><a href="mailto:ceo@webcanbe.com" aria-label="Email the WebCanBe CEO">ceo@webcanbe.com</a>';
-          generalContact.appendChild(ceoContact);
+        const emailSlot = generalLink?.closest('[data-framer-name="Email"]');
+        let additionalContacts = emailSlot?.querySelector('.webcanbe-footer-contact-list');
+        if (emailSlot && generalLink && !additionalContacts) {
+          additionalContacts = document.createElement('div');
+          additionalContacts.className = 'webcanbe-footer-contact-list';
+          [
+            ['creator@webcanbe.com', 'Email WebCanBe projects'],
+            ['ceo@webcanbe.com', 'Email the WebCanBe CEO']
+          ].forEach(([address, ariaLabel]) => {
+            const row = generalLink.parentElement.cloneNode(true);
+            const link = row.querySelector('a');
+            if (!link) return;
+            link.textContent = address;
+            link.href = `mailto:${address}`;
+            link.removeAttribute('target');
+            link.setAttribute('aria-label', ariaLabel);
+            additionalContacts.appendChild(row);
+          });
+          emailSlot.appendChild(additionalContacts);
         }
-        const ceoLink = ceoContact.querySelector('a');
-        if (ceoLink) {
-          ceoLink.href = 'mailto:ceo@webcanbe.com';
-          ceoLink.removeAttribute('target');
-        }
+        additionalContacts?.querySelectorAll('a').forEach((link, index) => {
+          const address = index === 0 ? 'creator@webcanbe.com' : 'ceo@webcanbe.com';
+          link.textContent = address;
+          link.href = `mailto:${address}`;
+          link.removeAttribute('target');
+        });
       }
       if (projectsContact) {
-        projectsContact.querySelectorAll('p').forEach((label) => {
-          if (/^(?:INQUIRY|PROJECTS)$/.test(label.textContent.trim())) setText(label, 'PROJECTS');
-        });
-        const projectLink = projectsContact.querySelector('a[href^="mailto:"]');
-        if (projectLink) {
-          projectLink.textContent = 'creator@webcanbe.com';
-          projectLink.href = 'mailto:creator@webcanbe.com';
-          projectLink.removeAttribute('target');
-          projectLink.setAttribute('aria-label', 'Email WebCanBe projects');
-        }
+        projectsContact.hidden = true;
+        projectsContact.style.display = 'none';
+        projectsContact.setAttribute('aria-hidden', 'true');
       }
     });
     document.querySelectorAll('a[data-framer-name="Navigation"]').forEach((link) => {
