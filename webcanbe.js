@@ -1143,6 +1143,27 @@
       link.setAttribute('aria-label', `Visit the ${project.name} live website in a new tab`);
       link.style.cursor = 'pointer';
     });
+    document.querySelectorAll('[data-framer-name="Section | Featured Projects"]').forEach((section) => {
+      const collection = section.querySelector('[data-framer-name="Featured Projects (CMS)"]');
+      if (!collection) return;
+      const syncCollectionHeight = () => {
+        const visibleCards = [...collection.querySelectorAll('a[data-framer-name="Image"]')]
+          .slice(0, showcaseProjects.length)
+          .map((link) => link.parentElement)
+          .filter((card) => card && getComputedStyle(card).display !== 'none');
+        const totalHeight = visibleCards.reduce((height, card) => height + card.getBoundingClientRect().height, 0);
+        if (totalHeight > 0) collection.style.height = `${Math.round(totalHeight)}px`;
+      };
+      collection.dataset.webcanbeProjectCount = String(showcaseProjects.length);
+      syncCollectionHeight();
+      if (collection.dataset.webcanbeResizeReady !== 'true') {
+        collection.dataset.webcanbeResizeReady = 'true';
+        window.addEventListener('resize', () => window.requestAnimationFrame(syncCollectionHeight), { passive: true });
+      }
+      section.querySelectorAll('[data-framer-name="CMS Project Counter"] p, [data-framer-name="CMS Project Counter"] span').forEach((counter) => {
+        if (counter.children.length === 0 && /^\d+$/.test(counter.textContent.trim())) counter.textContent = String(showcaseProjects.length);
+      });
+    });
     replaceImage('[data-framer-name="Section | How we work"] img[alt^="Abstract dark background"]', 'assets/webcanbe-process-storyboard.png', 'WebCanBe creator-website strategy and storyboard process');
     replaceImage('[data-framer-name="Section | How we work"] img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-process-detail.png', 'Responsive personal-brand website prototype review');
     const serviceImages = [
@@ -1644,6 +1665,19 @@
       setMatchingText(section, 'FOUNDATION', 'OWNED HOME');
       setMatchingText(section, 'CREATOR COMMERCE EXPERIENCE', 'LAUNCH EXPERIENCE');
       setMatchingText(section, 'INTERACTIVE WEBSITE WEBSITE', 'INTERACTIVE WEBSITE');
+    });
+    document.querySelectorAll('[data-framer-name^="Benefit Card 02"], [data-framer-name="Benefit Card 04 -Phone"]').forEach((card) => {
+      setMatchingText(card, 'BUILT AROUND YOU', 'BUILT FOR YOU');
+      setMatchingText(card, 'NOT A GENERIC TEMPLATE', 'CUSTOM');
+      setMatchingText(card, 'ONE CLEAR EXPERIENCE', 'ONE CLEAR FLOW');
+      setMatchingText(card, 'TO NEWSLETTERS, PRODUCTS + INQUIRIES', 'OFFERS + INQUIRIES');
+      setMatchingText(card, 'DESIGN + DEVELOPMENT', 'DESIGN + BUILD');
+      setMatchingText(card, 'READY TO GROW', 'CUSTOM BY DEFAULT');
+      setMatchingText(card, 'A site that can grow with the business behind your audience.', 'Never from a generic template.');
+    });
+    document.querySelectorAll('[data-framer-name="Benefit Card 05"], [data-framer-name="Benefit Card 05 - Phone"]').forEach((card) => {
+      setMatchingText(card, 'BUILT FOR WHAT COMES NEXT', 'READY TO GROW');
+      setMatchingText(card, 'Your site should keep pace with your business.', 'Built to grow with you.');
     });
 
     const pricingPlans = [
