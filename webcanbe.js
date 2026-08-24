@@ -951,7 +951,7 @@
     document.querySelectorAll('a[aria-label*="Framer template"], a[href*="framerpod.com"]').forEach((a) => {
       if (/template|designed by tamas/i.test(`${a.textContent} ${a.getAttribute('aria-label') || ''}`)) a.remove();
     });
-    document.querySelectorAll('a[href*="contact"]').forEach((a) => a.href = "contact.html");
+    document.querySelectorAll('a[href*="contact"]:not(.webcanbe-global-contact)').forEach((a) => a.href = "contact.html");
     document.querySelectorAll('a[href^="mailto:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href^="tel:"]').forEach((a) => a.href = "mailto:creator@webcanbe.com");
     document.querySelectorAll('a[href*="dub.sh/create"], a[href*="framerpod"], a[href*="tamasbodo"], a[href*="linkedin.com"], a[href*="whatsapp.com"], a[href*="glassdoor.com"], a[href*="instagram.com"], a[href*="facebook.com"], a[href*="threads.com"], a[href*="x.com/"]').forEach((a) => a.remove());
