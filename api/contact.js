@@ -31,10 +31,9 @@ export default async function handler(request, response) {
   const name = clean(request.body?.name, 120);
   const email = clean(request.body?.email, 254).toLowerCase();
   const social = clean(request.body?.social, 300);
-  const siteType = clean(request.body?.siteType, 120);
   const message = clean(request.body?.message, 5000);
   const suppliedKey = clean(request.body?.idempotencyKey, 100);
-  if (!name || !email || !siteType || !message) return response.status(400).json({ error: "Please complete the required fields." });
+  if (!name || !email || !message) return response.status(400).json({ error: "Please complete the required fields." });
   if (!EMAIL_PATTERN.test(email)) return response.status(400).json({ error: "Please enter a valid email address." });
 
   const apiKey = process.env.RESEND_API_KEY;
@@ -49,7 +48,7 @@ export default async function handler(request, response) {
 
   const now = Date.now();
   pruneDeliveredRequests(now);
-  const duplicateKey = suppliedKey || `${email}|${siteType}|${message}`;
+  const duplicateKey = suppliedKey || `${email}|${message}`;
   if (deliveredRequests.has(duplicateKey)) {
     return response.status(409).json({ error: "This project inquiry was already submitted. Please wait before sending it again." });
   }
@@ -59,7 +58,7 @@ export default async function handler(request, response) {
   const firstName = name.split(/\s+/)[0];
   const projectDetails = [
     ["Name", name], ["Email", email], ["Website / channel", social || "Not provided"],
-    ["Project type", siteType], ["Project details", message]
+    ["Project details", message]
   ];
   const internalText = projectDetails.map(([label, value]) => `${label}:\n${value}`).join("\n\n");
   const internalHtml = projectDetails.map(([label, value]) => `<p><strong>${escapeHtml(label)}</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`).join("");
@@ -69,7 +68,7 @@ export default async function handler(request, response) {
   try {
     await sendWithResend(apiKey, {
       from, to: ["creator@webcanbe.com"], reply_to: email,
-      subject: `[WebCanBe] ${siteType} inquiry — ${name}`,
+      subject: `[WebCanBe] Project inquiry — ${name}`,
       text: internalText, html: internalHtml
     });
     await sendWithResend(apiKey, {

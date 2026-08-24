@@ -1444,12 +1444,14 @@
       form.replaceWith(detachedForm);
       form = detachedForm;
     }
+    form.id = 'project-inquiry';
+    form.tabIndex = -1;
     const setButtonLabel = (button, label) => {
       const paragraphs = [...button.querySelectorAll('p')];
       if (paragraphs.length) paragraphs.forEach((paragraph) => paragraph.textContent = label);
       else button.textContent = label;
     };
-    const submissionFingerprint = (fields) => [fields.name.value, fields.email.value, fields.type.value, fields.message.value]
+    const submissionFingerprint = (fields) => [fields.name.value, fields.email.value, fields.message.value]
       .map((value) => value.trim().toLowerCase()).join('|');
     const submissionKey = (liveForm) => {
       if (!liveForm.dataset.webcanbeSubmissionKey) {
@@ -1480,14 +1482,12 @@
         const name = liveForm.querySelector('input[name="name"]');
         const company = liveForm.querySelector('input[name="social"]');
         const email = liveForm.querySelector('input[name="email"]');
-        const type = liveForm.querySelector('select[name="siteType"]');
         const message = liveForm.querySelector('textarea[name="message"]');
-        if (!name || !company || !email || !type || !message || !submitButton || liveForm.dataset.webcanbeContactSending === 'true') return;
-        const fields = { name, company, email, type, message };
+        if (!name || !company || !email || !message || !submitButton || liveForm.dataset.webcanbeContactSending === 'true') return;
+        const fields = { name, company, email, message };
         const validations = [
           [name, 'Please enter your name.', !name.value.trim()],
           [email, 'Please enter a valid email address.', !/^\S+@\S+\.\S+$/.test(email.value.trim())],
-          [type, 'Please select what you are building.', !type.value],
           [message, 'Please tell us about the project.', !message.value.trim()]
         ];
         validations.forEach(([field, validationMessage, invalid]) => field.setCustomValidity(invalid ? validationMessage : ''));
@@ -1504,7 +1504,7 @@
           const response = await fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: name.value, email: email.value, social: company.value, siteType: type.value, message: message.value, idempotencyKey: submissionKey(liveForm) })
+            body: JSON.stringify({ name: name.value, email: email.value, social: company.value, message: message.value, idempotencyKey: submissionKey(liveForm) })
           });
           if (!response.ok) throw new Error('Unable to send the inquiry.');
           rememberSubmission(fields);
@@ -1578,20 +1578,10 @@
       email.name = 'email'; email.type = 'email'; email.placeholder = 'Email';
       message.name = 'message'; message.placeholder = 'Tell us about the project';
       name.required = true; email.required = true; message.required = true;
-      let type = form.querySelector('select[name="siteType"]');
-      if (!type) {
-        type = document.createElement('select');
-        type.name = 'siteType';
-        type.className = company.className;
-        type.setAttribute('aria-label', 'What are you building?');
-        type.innerHTML = '<option value="">What are you building?</option><option>Creator Website</option><option>Personal Brand</option><option>Creator Commerce</option><option>Launch Page</option><option>Interactive Website</option><option>Redesign</option><option>Other</option>';
-        company.parentElement?.parentElement?.after(type);
-      }
-      type.required = true;
+      form.querySelectorAll('select[name="siteType"]').forEach((type) => type.remove());
       const validations = [
         [name, 'Please enter your name.', () => !name.value.trim()],
         [email, 'Please enter a valid email address.', () => !/^\S+@\S+\.\S+$/.test(email.value.trim())],
-        [type, 'Please select what you are building.', () => !type.value],
         [message, 'Please tell us about the project.', () => !message.value.trim()]
       ];
       const validate = () => validations.forEach(([field, validationMessage, isInvalid]) => {
@@ -1614,7 +1604,7 @@
         }));
       });
       validate();
-      return { name, company, email, message, type, validate };
+      return { name, company, email, message, validate };
     };
     configureFields();
     syncFormButtons();
@@ -1635,7 +1625,6 @@
             name: fields.name.value,
             email: fields.email.value,
             social: fields.company.value,
-            siteType: fields.type.value,
             message: fields.message.value,
             idempotencyKey: submissionKey(form)
           })
@@ -2080,6 +2069,24 @@
     });
   };
 
+  const ensureGlobalContact = () => {
+    const onContactPage = /\/contact(?:\.html)?\/?$/.test(window.location.pathname);
+    const contactHref = onContactPage ? '#project-inquiry' : '/contact#project-inquiry';
+    document.querySelectorAll('[data-framer-name="Height:100dvh"]').forEach((widget) => {
+      if (/START A PROJECT/i.test(widget.innerText || '')) widget.style.display = 'none';
+    });
+    let contactButton = document.querySelector('.webcanbe-global-contact');
+    if (!contactButton) {
+      contactButton = document.createElement('a');
+      contactButton.className = 'webcanbe-global-contact';
+      contactButton.textContent = 'CONTACT';
+      contactButton.setAttribute('aria-label', 'Open the WebCanBe project inquiry form');
+      document.body.appendChild(contactButton);
+    }
+    contactButton.href = contactHref;
+    contactButton.removeAttribute('target');
+  };
+
   const refreshContent = () => {
     setMeta();
     replaceAnimatedCopy();
@@ -2091,6 +2098,7 @@
     refineInternationalSections();
     refineCreatorBusinessSections();
     setContactForm();
+    ensureGlobalContact();
     sanitizeUserFacingSignals();
   };
   const run = () => { refreshContent(); observeBenefitCards(); observeDynamicSections(); observeLinkTargets(); };

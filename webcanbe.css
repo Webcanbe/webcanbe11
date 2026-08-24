@@ -100,3 +100,54 @@
 .webcanbe-footer-projects-links a:focus-visible {
   color: rgb(255, 96, 65);
 }
+
+/* Footer additions need to remain stable after Framer's per-page entrance animation. */
+[data-framer-name="Footer"] [data-framer-appear-id] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.webcanbe-footer-projects {
+  max-width: 100%;
+}
+
+.webcanbe-footer-projects-links a {
+  color: var(--token-fbea26c7-8757-4c66-adde-b08e26f9e38c, rgb(92, 96, 99)) !important;
+  display: inline-flex;
+}
+
+/* Replaces the template's pop-up project widget with one direct form link. */
+.webcanbe-global-contact {
+  align-items: center;
+  background: rgb(255, 96, 65);
+  border-radius: 999px;
+  bottom: 20px;
+  box-shadow: 0 10px 28px rgba(20, 20, 20, 0.18);
+  color: #fff !important;
+  display: inline-flex;
+  font-family: "Fragment Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  min-height: 42px;
+  padding: 0 18px;
+  position: fixed;
+  right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 2147480000;
+}
+
+.webcanbe-global-contact:hover,
+.webcanbe-global-contact:focus-visible {
+  background: rgb(20, 20, 20);
+}
+
+@media (max-width: 809px) {
+  .webcanbe-global-contact {
+    bottom: 14px;
+    right: 14px;
+  }
+}
