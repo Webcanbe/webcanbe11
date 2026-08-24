@@ -44,8 +44,16 @@
 
 /* Reuses the existing hello@ link treatment for every footer contact. */
 .webcanbe-footer-contact-list {
+  align-items: flex-start;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
+  width: 100%;
+}
+
+.webcanbe-footer-contact-list > p {
+  align-self: flex-start;
+  margin: 0;
 }
