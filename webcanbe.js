@@ -1682,12 +1682,13 @@
         { category: 'LAUNCH EXPERIENCE', headline: 'LAUNCH EXPERIENCE', description: 'A focused launch experience for courses, programs, products and major creator offers.', features: ['Launch narrative', 'Offer and program flow', 'Conversion paths', 'Platform integrations', 'Launch handoff'], project: 'THE CREATOR SYSTEM', url: 'https://webcanbe-skillfunnel.vercel.app/', image: 'https://framerusercontent.com/images/Vb9zseAb0YK9TtzGRZQbW16Qro.png?scale-down-to=2048&width=5120&height=2881', alt: 'THE CREATOR SYSTEM launch example' },
         { category: 'MEMBERSHIP / COMMUNITY', headline: 'MEMBERSHIP COMMUNITY', description: 'A premium home for private membership, community, resources and applications.', features: ['Membership positioning', 'Resources and member flows', 'Application path', 'Private community system', 'Responsive development'], project: 'THE OPERATOR CLUB', url: 'https://webcanbe-theboard.vercel.app/', image: 'https://framerusercontent.com/images/4ssprDQQhoDagf6Qy75EdLiUJmg.jpg?scale-down-to=2048&width=2464&height=1856', alt: 'THE OPERATOR CLUB community example' }
       ];
-      let cards = [...section.querySelectorAll('[data-framer-name^="Desktop - Service "]')]
+      ['Desktop', 'Phone'].forEach((variant) => {
+      let cards = [...section.querySelectorAll(`[data-framer-name^="${variant} - Service "]`)]
         .sort((a, b) => Number(a.getAttribute('data-framer-name').match(/(\d+)$/)?.[1]) - Number(b.getAttribute('data-framer-name').match(/(\d+)$/)?.[1]));
       if (cards.length === 6) {
         const source = cards[5];
         const clone = source.cloneNode(true);
-        clone.setAttribute('data-framer-name', 'Desktop - Service 7');
+        clone.setAttribute('data-framer-name', `${variant} - Service 7`);
         clone.dataset.webcanbeServiceClone = 'true';
         source.parentElement?.appendChild(clone);
         cards = [...cards, clone];
@@ -1700,7 +1701,7 @@
         setText(labels[2], String(index + 1));
         setText(labels[3], example.headline);
         setText(labels[4], example.description);
-        if (index >= 3) labels[3].style.fontSize = 'clamp(54px, 7.8vw, 94px)';
+        if (index >= 3) labels[3].style.fontSize = variant === 'Phone' ? 'clamp(36px, 12vw, 54px)' : 'clamp(54px, 7.8vw, 94px)';
         card.querySelectorAll('img').forEach((image) => { image.src = example.image; image.removeAttribute('srcset'); image.alt = example.alt; image.style.objectPosition = '50% 50%'; });
         const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
         if (description) {
@@ -1713,6 +1714,7 @@
           startLink.textContent = 'START A PROJECT'; startLink.href = 'contact.html'; startLink.setAttribute('aria-label', 'Start a WebCanBe project');
         }
         [6, 8, 10, 12, 14].forEach((labelIndex, featureIndex) => setText(labels[labelIndex], example.features[featureIndex]));
+      });
       });
     });
     document.querySelectorAll('[data-framer-name^="Benefit Card 02"], [data-framer-name="Benefit Card 04 -Phone"]').forEach((card) => {
