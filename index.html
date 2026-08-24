@@ -5,7 +5,15 @@
 <html data-redirect-timezone="1" lang="en">
 <head>
 <meta charset="utf-8"/>
-<link href="webcanbe.css?v=20260823-featured3" rel="stylesheet"/>
+<link href="webcanbe.css?v=20260824-hero-polish" rel="stylesheet"/>
+<link as="image" fetchpriority="high" href="/assets/webcanbe-creator-portrait.png" rel="preload"/>
+<style>
+/* Keep the exported template portrait from entering the first painted frame. */
+[data-framer-name="Hero Image"] [data-framer-name="BG"] > [data-framer-background-image-wrapper] {
+  background: center / cover no-repeat url("/assets/webcanbe-creator-portrait.png") !important;
+}
+[data-framer-name="Hero Image"] img[src*="F36xMPu8pHnGVkDRZem7seck5w"] { display: none !important; }
+</style>
 <meta content="width=device-width" name="viewport"/>
 <meta content="Framer 80f113d" name="generator"/>
 <title>WebCanBe — Premium Websites for Creator-Led Businesses</title>

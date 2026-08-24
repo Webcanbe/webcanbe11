@@ -29,3 +29,15 @@
 .webcanbe-service-start:focus-visible {
   color: rgb(255, 96, 65);
 }
+
+/* Number Flow's export uses negative margins that cut tall Figtree numerals. */
+[data-framer-name="Section | Statistics"] [role="img"] {
+  line-height: 1.12 !important;
+  padding: 0.08em 0 0.14em;
+}
+
+[data-framer-name="Section | Statistics"] [id^="frameruni-"] {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  overflow: visible !important;
+}

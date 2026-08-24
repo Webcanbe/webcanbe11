@@ -1181,8 +1181,8 @@
     replaceImage('[data-framer-name="Section | How we work"] img[alt^="Futuristic black and white concept car"]', 'assets/webcanbe-process-detail.png', 'Responsive personal-brand website prototype review');
     const serviceImages = [
       ['assets/portfolio-vidora.jpg', 'VIDORA creator-business website example', '50% 50%'],
-      ['assets/portfolio-mason-reed.png', 'Mason Reed personal-brand website example', '50% 28%'],
-      ['assets/portfolio-maeve.jpg', 'MAEVE creator-brand and commerce website example', '50% 32%'],
+      ['assets/portfolio-mason-reed.png', 'Mason Reed personal-brand website example', '50% 22%'],
+      ['assets/portfolio-maeve.jpg', 'MAEVE creator-brand and commerce website example', '50% 28%'],
       ['https://framerusercontent.com/images/0VDbrfao2M2kp6IWzpDkyyyEFYI.jpg?scale-down-to=512&width=1920&height=1920', 'THE SIGNAL independent publication example', '50% 50%'],
       ['https://framerusercontent.com/images/1IZjMkHfxZEUwlavYO22U4cOE.png?scale-down-to=2048&width=4800&height=2976', 'OFF RECORD cinematic podcast example', '50% 50%'],
       ['https://framerusercontent.com/images/Vb9zseAb0YK9TtzGRZQbW16Qro.png?scale-down-to=2048&width=5120&height=2881', 'THE CREATOR SYSTEM launch example', '50% 50%'],
@@ -1205,6 +1205,28 @@
     replaceImage('[data-framer-name="Section | Blog Teaser"] img[alt="red sports car in front of a showroom with bright lights"]', 'assets/webcanbe-guide-site-operations.png', 'Operating a creator website after launch');
     replaceImage('img[alt="Logo"]', 'assets/webcanbe-wordmark.svg', 'WebCanBe');
     replaceImage('img[src*="aJxLydBlZv1oYCCj63OZdiRqLuQ"]', 'assets/webcanbe-wordmark.svg', 'WebCanBe');
+    const ecosystemLogos = [
+      ['assets/ecosystem-github.svg', 'GitHub'],
+      ['assets/ecosystem-vercel.svg', 'Vercel'],
+      ['assets/ecosystem-youtube.svg', 'YouTube'],
+      ['assets/ecosystem-substack.svg', 'Substack'],
+      ['assets/ecosystem-shopify.svg', 'Shopify'],
+      ['assets/ecosystem-stripe.svg', 'Stripe'],
+      ['assets/ecosystem-notion.svg', 'Notion'],
+      ['assets/ecosystem-gumroad.svg', 'Gumroad']
+    ];
+    document.querySelectorAll('[data-framer-name="Section | Hero"] [data-framer-name^="Logo "]').forEach((logo) => {
+      const index = Number(logo.getAttribute('data-framer-name').match(/(\d+)$/)?.[1]) - 1;
+      const ecosystemLogo = ecosystemLogos[index];
+      const image = logo.querySelector('img');
+      if (!ecosystemLogo || !image) return;
+      image.src = ecosystemLogo[0];
+      image.removeAttribute('srcset');
+      image.alt = ecosystemLogo[1];
+      image.setAttribute('aria-label', `${ecosystemLogo[1]} platform ecosystem reference`);
+      image.style.filter = 'invert(1)';
+      image.style.opacity = '0.68';
+    });
     replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and red covers"]', 'assets/webcanbe-design-process.png', 'WebCanBe custom website-design process');
     replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and blue covers"]', 'assets/webcanbe-creator-workspace.png', 'Creator working on a personal-brand website');
     replaceImage('[data-framer-name="Benefit Cards"] img[alt^="Minimalist stack of guideline with clean typography and monochrome covers"]', 'assets/webcanbe-benefit-launch.png', 'Responsive creator-website launch review');
@@ -1303,7 +1325,12 @@
       metric.textContent = value;
       metric.setAttribute('role', 'img');
       metric.setAttribute('aria-label', value);
-      metric.style.cssText = `${counter.style.cssText};display:inline-block;white-space:nowrap;`;
+      metric.style.cssText = `${counter.style.cssText};display:inline-block;white-space:nowrap;line-height:1.12;padding:0.08em 0 0.14em;`;
+      if (counter.parentElement) {
+        counter.parentElement.style.marginTop = '0';
+        counter.parentElement.style.marginBottom = '0';
+        counter.parentElement.style.overflow = 'visible';
+      }
       counter.replaceWith(metric);
     });
     document.querySelectorAll('[data-framer-name="Section | Statistics"]').forEach((section) => {
@@ -1674,9 +1701,9 @@
 
     document.querySelectorAll('[data-framer-name="Section | Services"]').forEach((section) => {
       const serviceExamples = [
-        { category: 'CREATOR BUSINESS WEBSITE', headline: 'CREATOR BUSINESS', description: 'Content, audience, media and partnership paths in one owned home.', features: ['Content architecture', 'Media and content hub', 'Newsletter integration', 'Partnership inquiry paths', 'Responsive development'], project: 'VIDORA', url: 'https://webcanbe-portfoliovidora.vercel.app/', image: 'assets/portfolio-vidora.jpg', alt: 'VIDORA creator-business website example' },
-        { category: 'PERSONAL BRAND WEBSITE', headline: 'PERSONAL BRAND', description: 'Expertise, content, products and services built around one recognizable personal brand.', features: ['Expertise and positioning', 'Content and resource structure', 'Courses, products and services', 'Advisory inquiry paths', 'Responsive development'], project: 'MASON REED', url: 'https://webcanbe-mason-reed.vercel.app/', image: 'assets/portfolio-mason-reed.png', alt: 'MASON REED personal-brand website example' },
-        { category: 'CREATOR BRAND / COMMERCE', headline: 'CREATOR COMMERCE', description: 'Editorial storytelling, campaigns and products for creator-owned brands.', features: ['Editorial art direction', 'Campaign and collection stories', 'Product and commerce paths', 'Collaboration inquiries', 'Responsive development'], project: 'MAEVE', url: 'https://webcanbe-maeve.vercel.app/', image: 'assets/portfolio-maeve.jpg', alt: 'MAEVE creator-brand and commerce website example' },
+        { category: 'CREATOR BUSINESS WEBSITE', headline: 'CREATOR BUSINESS', description: 'Content, audience, media and partnership paths in one owned home.', features: ['Content architecture', 'Media and content hub', 'Newsletter integration', 'Partnership inquiry paths', 'Responsive development'], project: 'VIDORA', url: 'https://webcanbe-portfoliovidora.vercel.app/', image: 'assets/portfolio-vidora.jpg', objectPosition: '50% 50%', alt: 'VIDORA creator-business website example' },
+        { category: 'PERSONAL BRAND WEBSITE', headline: 'PERSONAL BRAND', description: 'Expertise, content, products and services built around one recognizable personal brand.', features: ['Expertise and positioning', 'Content and resource structure', 'Courses, products and services', 'Advisory inquiry paths', 'Responsive development'], project: 'MASON REED', url: 'https://webcanbe-mason-reed.vercel.app/', image: 'assets/portfolio-mason-reed.png', objectPosition: '50% 22%', alt: 'MASON REED personal-brand website example' },
+        { category: 'CREATOR BRAND / COMMERCE', headline: 'CREATOR COMMERCE', description: 'Editorial storytelling, campaigns and products for creator-owned brands.', features: ['Editorial art direction', 'Campaign and collection stories', 'Product and commerce paths', 'Collaboration inquiries', 'Responsive development'], project: 'MAEVE', url: 'https://webcanbe-maeve.vercel.app/', image: 'assets/portfolio-maeve.jpg', objectPosition: '50% 28%', alt: 'MAEVE creator-brand and commerce website example' },
         { category: 'NEWSLETTER / MEDIA', headline: 'NEWSLETTER MEDIA', description: 'A publication, newsletter and content archive built into an owned media business.', features: ['Editorial system', 'Newsletter and archive', 'Topics and resources', 'Sponsorship paths', 'Responsive development'], project: 'THE SIGNAL', url: 'https://webcanbe-narric.vercel.app/', image: 'https://framerusercontent.com/images/0VDbrfao2M2kp6IWzpDkyyyEFYI.jpg?scale-down-to=512&width=1920&height=1920', alt: 'THE SIGNAL publication example' },
         { category: 'PODCAST / MEDIA', headline: 'PODCAST MEDIA', description: 'Episodes, guests, stories, partnerships and audience relationships in one media home.', features: ['Episode library', 'Guest and story pages', 'Audience subscriptions', 'Partnership inquiry paths', 'Responsive development'], project: 'OFF RECORD', url: 'https://webcanbe-lisyn.vercel.app/', image: 'https://framerusercontent.com/images/1IZjMkHfxZEUwlavYO22U4cOE.png?scale-down-to=2048&width=4800&height=2976', alt: 'OFF RECORD cinematic podcast example' },
         { category: 'LAUNCH EXPERIENCE', headline: 'LAUNCH EXPERIENCE', description: 'A focused launch experience for courses, programs, products and major creator offers.', features: ['Launch narrative', 'Offer and program flow', 'Conversion paths', 'Platform integrations', 'Launch handoff'], project: 'THE CREATOR SYSTEM', url: 'https://webcanbe-skillfunnel.vercel.app/', image: 'https://framerusercontent.com/images/Vb9zseAb0YK9TtzGRZQbW16Qro.png?scale-down-to=2048&width=5120&height=2881', alt: 'THE CREATOR SYSTEM launch example' },
@@ -1712,7 +1739,7 @@
             phoneLabels.slice(1).forEach((label, featureIndex) => setText(label, phoneFeatures[featureIndex]));
           }
         }
-        card.querySelectorAll('img').forEach((image) => { image.src = example.image; image.removeAttribute('srcset'); image.alt = example.alt; image.style.objectPosition = '50% 50%'; });
+        card.querySelectorAll('img').forEach((image) => { image.src = example.image; image.removeAttribute('srcset'); image.alt = example.alt; image.style.objectPosition = example.objectPosition || '50% 50%'; });
         const description = [...card.querySelectorAll('[data-framer-name="Description"]')].find((element) => element.querySelector('p'));
         if (description) {
           description.classList.add('webcanbe-service-description-with-example');
